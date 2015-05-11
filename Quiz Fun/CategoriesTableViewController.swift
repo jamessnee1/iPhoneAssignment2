@@ -13,6 +13,9 @@ class CategoriesTableViewController: UITableViewController {
     //categories data
     var categories = [Category]()
     
+    @IBAction func backButton(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

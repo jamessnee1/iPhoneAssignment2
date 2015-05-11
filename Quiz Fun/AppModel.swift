@@ -13,6 +13,7 @@ class AppModel: NSObject {
     
     //stores how many questions the player has answered correctly
     var playerScore : Int = 0
+    var playerName = ""
     
     //question data
     struct Questions {
@@ -22,6 +23,7 @@ class AppModel: NSObject {
         let answer2 : String
         let answer3 : String
         let answer4: String
+        let correctAnswer : String
         
     }
     
@@ -36,17 +38,20 @@ class AppModel: NSObject {
     }
     
     //arrays of questions to pull from
-    let gkQuestions = [Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: ""),
-        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: ""),
-        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: ""),
-        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: ""),
-        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "")]
+    //General Knowledge
+    let gkQuestions = [Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "", correctAnswer: ""),
+        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "", correctAnswer: ""),
+        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "", correctAnswer: ""),
+        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "", correctAnswer: ""),
+        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "", correctAnswer: "")]
     
-    let geoQuestions = [Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: ""),
-        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: ""),
-        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: ""),
-        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: ""),
-        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "")]
+    
+    //geography
+    let geoQuestions = [Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "", correctAnswer: ""),
+        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "", correctAnswer: ""),
+        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "", correctAnswer: ""),
+        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "", correctAnswer: ""),
+        Questions(question: "", answer1: "", answer2: "", answer3: "", answer4: "", correctAnswer: "")]
     
     
         
