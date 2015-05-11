@@ -1,25 +1,156 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dzh-lf-dZq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Categories-->
+        <scene sceneID="HAw-3I-ZfF">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="DDy-O3-KhE" customClass="CategoriesTableViewController" customModule="Quiz_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ei9-QM-RBX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="R9K-Zr-NUk">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R9K-Zr-NUk" id="I01-5C-LNB">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="a0T-bx-gNn" kind="show" identifier="categoriesDetail" id="9gs-gw-mVM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DDy-O3-KhE" id="Edj-De-171"/>
+                            <outlet property="delegate" destination="DDy-O3-KhE" id="OYK-gH-yyz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Categories" id="s82-dk-XTn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXb-Di-6pU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="435"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="1oC-Hu-dIh">
+            <objects>
+                <viewController id="a0T-bx-gNn" customClass="QuestionViewController" customModule="Quiz_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qn2-rZ-sgf"/>
+                        <viewControllerLayoutGuide type="bottom" id="gSW-2u-9SH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gj5-yz-pdk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Score: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-1w-hSU">
+                                <rect key="frame" x="247" y="95" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1H-qT-dP3">
+                                <rect key="frame" x="180" y="150" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="fgt-5o-O9R"/>
+                                </constraints>
+                                <string key="text">This is a test for the text to speech feature of our app. It will read this text for people who are blind, or just would like the question to be read to them.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7B-GK-TLQ">
+                                <rect key="frame" x="150" y="150" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.011181991146299697" green="0.24566988138554258" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="textToSpeech:" destination="a0T-bx-gNn" eventType="touchUpInside" id="lKg-aX-C7Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="LlF-1w-hSU" secondAttribute="centerY" constant="194.5" id="1pL-cQ-JYO"/>
+                            <constraint firstItem="U1H-qT-dP3" firstAttribute="leading" secondItem="c7B-GK-TLQ" secondAttribute="trailing" constant="8" id="AHd-pG-6xW"/>
+                            <constraint firstItem="LlF-1w-hSU" firstAttribute="centerX" secondItem="U1H-qT-dP3" secondAttribute="centerX" constant="0.5" id="BgF-eg-aTG"/>
+                            <constraint firstItem="U1H-qT-dP3" firstAttribute="top" secondItem="LlF-1w-hSU" secondAttribute="bottom" constant="34" id="NUg-Jw-4UL"/>
+                            <constraint firstAttribute="centerX" secondItem="LlF-1w-hSU" secondAttribute="centerX" constant="-0.5" id="Qdh-LH-Aio"/>
+                            <constraint firstItem="c7B-GK-TLQ" firstAttribute="top" secondItem="U1H-qT-dP3" secondAttribute="top" id="hgh-bV-wSt"/>
+                            <constraint firstItem="gSW-2u-9SH" firstAttribute="top" secondItem="U1H-qT-dP3" secondAttribute="bottom" constant="322" id="t61-an-asL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="questionTextField" destination="U1H-qT-dP3" id="5VB-K0-xaq"/>
+                        <outlet property="scoreLabel" destination="LlF-1w-hSU" id="mGP-dP-FGf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQT-8I-sAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2398" y="435"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="tdN-v5-Ft2">
+            <objects>
+                <viewController id="dzh-lf-dZq" customClass="MainViewController" customModule="Quiz_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gUx-4o-zCG"/>
+                        <viewControllerLayoutGuide type="bottom" id="VIv-AS-5Tk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hjH-ap-mAD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwN-As-bcf">
+                                <rect key="frame" x="277" y="285" width="69" height="30"/>
+                                <state key="normal" title="Start Quiz">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="H6t-i3-M8V" kind="show" id="66q-yD-99P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDm-ph-dlv">
+                                <rect key="frame" x="274" y="416" width="75" height="30"/>
+                                <state key="normal" title="Reset Quiz">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetQuizButton:" destination="dzh-lf-dZq" eventType="touchUpInside" id="AAg-Ar-56D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="BDm-ph-dlv" secondAttribute="centerY" constant="-131" id="FWd-lM-HOk"/>
+                            <constraint firstAttribute="centerX" secondItem="BDm-ph-dlv" secondAttribute="centerX" constant="-11.5" id="UZQ-JJ-63X"/>
+                            <constraint firstAttribute="centerY" secondItem="dwN-As-bcf" secondAttribute="centerY" id="fPz-Wy-a8P"/>
+                            <constraint firstAttribute="centerX" secondItem="dwN-As-bcf" secondAttribute="centerX" constant="-11.5" id="qSX-iV-8bp"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydA-Dv-kZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="263" y="435"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tAc-Hi-rk6">
+            <objects>
+                <navigationController id="H6t-i3-M8V" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OsK-VY-B9P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DDy-O3-KhE" kind="relationship" relationship="rootViewController" id="ozW-t4-HKq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXk-tg-NZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029" y="435"/>
         </scene>
     </scenes>
 </document>

@@ -9,89 +9,71 @@
 import UIKit
 
 class CategoriesTableViewController: UITableViewController {
+    
+    //categories data
+    var categories = [Category]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.categories = [Category(categoryName: "General Knowledge", categoryDesc: "This is a general quiz for all ages.", numOfQuestions: 5),
+        Category(categoryName: "Geography", categoryDesc: "Geography quiz" , numOfQuestions: 5),
+        Category(categoryName: "Pop Culture", categoryDesc: "Pop Culture quiz", numOfQuestions: 5),
+        Category(categoryName: "Science", categoryDesc: "Science Quiz", numOfQuestions: 5),
+        Category(categoryName: "Australian Politics", categoryDesc: "Politics Quiz", numOfQuestions: 5),
+        Category(categoryName: "History", categoryDesc: "History Quiz", numOfQuestions: 5)]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        //returns number of rows in section
+        return self.categories.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+        
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        
+        //get corresponding category
+        let category = self.categories[indexPath.row]
+        
+        //configure cell
+        cell.textLabel!.text = category.categoryName
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        
         return cell
+        
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("categoriesDetail", sender: tableView)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "categoriesDetail" {
+            
+            let categoriesDetail = segue.destinationViewController as QuestionViewController
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            let destinationTitle = self.categories[indexPath.row].categoryName
+            let destinationDesc = self.categories[indexPath.row].categoryDesc
+            categoriesDetail.title = destinationTitle
+            
+        
+        }
+        
     }
-    */
-
+    
 }

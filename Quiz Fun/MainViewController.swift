@@ -10,6 +10,12 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBAction func resetQuizButton(sender: UIButton) {
+        
+        var alert = UIAlertView(title: "Quiz", message: "Successfully reset quiz!", delegate: self, cancelButtonTitle: "OK")
+        alert.show()
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct Category {
+
+    let categoryName : String
+    let categoryDesc : String
+    let numOfQuestions : Int
+    
+
+}
