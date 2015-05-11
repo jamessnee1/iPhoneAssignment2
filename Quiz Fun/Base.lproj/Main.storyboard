@@ -153,13 +153,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzC-jV-R3O">
+                                <rect key="frame" x="259" y="347" width="83" height="30"/>
+                                <state key="normal" title="Start Game!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nJ0-Va-uQ0" firstAttribute="trailing" secondItem="Eg6-eR-K2b" secondAttribute="trailing" id="1f0-da-jEo"/>
                             <constraint firstAttribute="centerX" secondItem="Eg6-eR-K2b" secondAttribute="centerX" constant="-0.5" id="9A8-2f-qxM"/>
                             <constraint firstAttribute="centerY" secondItem="Eg6-eR-K2b" secondAttribute="centerY" constant="124.5" id="GfP-pH-X3t"/>
+                            <constraint firstAttribute="centerX" secondItem="VzC-jV-R3O" secondAttribute="centerX" constant="-0.5" id="dqw-cf-o1C"/>
                             <constraint firstItem="nJ0-Va-uQ0" firstAttribute="top" secondItem="Eg6-eR-K2b" secondAttribute="bottom" constant="26" id="iHp-fk-vjV"/>
+                            <constraint firstAttribute="centerY" secondItem="VzC-jV-R3O" secondAttribute="centerY" constant="-62" id="qj6-fF-Pa0"/>
                             <constraint firstItem="nJ0-Va-uQ0" firstAttribute="leading" secondItem="Eg6-eR-K2b" secondAttribute="leading" id="rr0-Bb-FfQ"/>
                         </constraints>
                     </view>
@@ -186,7 +194,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="H6t-i3-M8V" kind="show" id="66q-yD-99P"/>
+                                    <action selector="startButton:" destination="dzh-lf-dZq" eventType="touchUpInside" id="Csf-Ry-rsO"/>
+                                    <segue destination="H6t-i3-M8V" kind="show" identifier="newGameWithPlayer" id="66q-yD-99P"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDm-ph-dlv">
@@ -236,6 +245,9 @@
                             <constraint firstItem="BDm-ph-dlv" firstAttribute="top" secondItem="iwd-YP-6ZX" secondAttribute="bottom" constant="38" id="y4n-p1-gRm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="kXc-Cv-grI" kind="show" identifier="ifNoPlayer" id="gDA-Au-0T1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydA-Dv-kZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -281,13 +293,13 @@
                                 </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.29999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YfZ-5k-AAe">
-                                <rect key="frame" x="346" y="195" width="118" height="31"/>
+                                <rect key="frame" x="352" y="195" width="107" height="31"/>
                                 <connections>
                                     <action selector="voiceSliderValueChanged:" destination="mMu-xI-Tjz" eventType="valueChanged" id="zEw-v4-TS8"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Pitch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0f9-8N-K3g">
-                                <rect key="frame" x="251" y="199" width="86" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0f9-8N-K3g">
+                                <rect key="frame" x="246" y="199" width="97" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>

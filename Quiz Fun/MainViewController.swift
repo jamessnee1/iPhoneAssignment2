@@ -9,6 +9,12 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    
+    //start button method. Checks database to see if there is a playerName in there. If not, we can create new player
+    @IBAction func startButton(sender: UIButton) {
+
+    }
 
     @IBAction func resetQuizButton(sender: UIButton) {
         
@@ -20,11 +26,31 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+       
+
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        appModel.retrievePlayer()
+        
+        if appModel.playerName == "" {
+        //no player, execute new player page
+            performSegueWithIdentifier("ifNoPlayer", sender: self)
+        
+        }
+        else {
+            performSegueWithIdentifier("newGameWithPlayer", sender: self)
+        
+        }
+        
+        
     }
     
 

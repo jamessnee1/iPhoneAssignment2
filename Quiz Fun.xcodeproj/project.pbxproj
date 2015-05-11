@@ -20,6 +20,11 @@
 		5966B8991B009AAB00772FE9 /* EnterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966B8981B009AAB00772FE9 /* EnterNameViewController.swift */; };
 		5981AA921B007BA3006D33F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981AA911B007BA3006D33F7 /* MainViewController.swift */; };
 		5981AA941B00829F006D33F7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5981AA931B00829F006D33F7 /* libsqlite3.dylib */; };
+		59F0CE201B00EE8C004BFCF5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0CE171B00EE8C004BFCF5 /* FMDatabase.m */; };
+		59F0CE211B00EE8C004BFCF5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0CE191B00EE8C004BFCF5 /* FMResultSet.m */; };
+		59F0CE221B00EE8C004BFCF5 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0CE1B1B00EE8C004BFCF5 /* FMDatabaseQueue.m */; };
+		59F0CE231B00EE8C004BFCF5 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0CE1D1B00EE8C004BFCF5 /* FMDatabaseAdditions.m */; };
+		59F0CE241B00EE8C004BFCF5 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0CE1F1B00EE8C004BFCF5 /* FMDatabasePool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,18 @@
 		5966B8981B009AAB00772FE9 /* EnterNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterNameViewController.swift; sourceTree = "<group>"; };
 		5981AA911B007BA3006D33F7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5981AA931B00829F006D33F7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		59F0CE141B00EE8B004BFCF5 /* Quiz Fun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quiz Fun-Bridging-Header.h"; sourceTree = "<group>"; };
+		59F0CE151B00EE8C004BFCF5 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		59F0CE161B00EE8C004BFCF5 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		59F0CE171B00EE8C004BFCF5 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		59F0CE181B00EE8C004BFCF5 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		59F0CE191B00EE8C004BFCF5 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		59F0CE1A1B00EE8C004BFCF5 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		59F0CE1B1B00EE8C004BFCF5 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		59F0CE1C1B00EE8C004BFCF5 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		59F0CE1D1B00EE8C004BFCF5 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		59F0CE1E1B00EE8C004BFCF5 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		59F0CE1F1B00EE8C004BFCF5 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +110,7 @@
 		4E27E7A01B0069DF00E093B2 /* Quiz Fun */ = {
 			isa = PBXGroup;
 			children = (
+				59F0CE131B00EE7D004BFCF5 /* FMDB */,
 				4E27E7C41B0069F400E093B2 /* ViewController */,
 				4E27E7C31B0069ED00E093B2 /* Model */,
 				4E27E7A71B0069DF00E093B2 /* Main.storyboard */,
@@ -148,6 +166,25 @@
 				5966B8981B009AAB00772FE9 /* EnterNameViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		59F0CE131B00EE7D004BFCF5 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				59F0CE151B00EE8C004BFCF5 /* FMDB.h */,
+				59F0CE161B00EE8C004BFCF5 /* FMDatabase.h */,
+				59F0CE171B00EE8C004BFCF5 /* FMDatabase.m */,
+				59F0CE181B00EE8C004BFCF5 /* FMResultSet.h */,
+				59F0CE191B00EE8C004BFCF5 /* FMResultSet.m */,
+				59F0CE1A1B00EE8C004BFCF5 /* FMDatabaseQueue.h */,
+				59F0CE1B1B00EE8C004BFCF5 /* FMDatabaseQueue.m */,
+				59F0CE1C1B00EE8C004BFCF5 /* FMDatabaseAdditions.h */,
+				59F0CE1D1B00EE8C004BFCF5 /* FMDatabaseAdditions.m */,
+				59F0CE1E1B00EE8C004BFCF5 /* FMDatabasePool.h */,
+				59F0CE1F1B00EE8C004BFCF5 /* FMDatabasePool.m */,
+				59F0CE141B00EE8B004BFCF5 /* Quiz Fun-Bridging-Header.h */,
+			);
+			name = FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,12 +289,17 @@
 			files = (
 				4E27E7C81B006B7100E093B2 /* CategoriesTableViewController.swift in Sources */,
 				4E27E7CC1B00709400E093B2 /* QuestionViewController.swift in Sources */,
+				59F0CE241B00EE8C004BFCF5 /* FMDatabasePool.m in Sources */,
 				4E27E7C61B006A0900E093B2 /* AppModel.swift in Sources */,
+				59F0CE201B00EE8C004BFCF5 /* FMDatabase.m in Sources */,
+				59F0CE211B00EE8C004BFCF5 /* FMResultSet.m in Sources */,
 				5966B8971B00978500772FE9 /* OptionsViewController.swift in Sources */,
 				5981AA921B007BA3006D33F7 /* MainViewController.swift in Sources */,
 				4E27E7A41B0069DF00E093B2 /* AppDelegate.swift in Sources */,
+				59F0CE221B00EE8C004BFCF5 /* FMDatabaseQueue.m in Sources */,
 				5966B8991B009AAB00772FE9 /* EnterNameViewController.swift in Sources */,
 				4E27E7CA1B006C1D00E093B2 /* Category.swift in Sources */,
+				59F0CE231B00EE8C004BFCF5 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,9 +424,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Quiz Fun/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quiz Fun/Quiz Fun-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -392,9 +437,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Quiz Fun/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quiz Fun/Quiz Fun-Bridging-Header.h";
 			};
 			name = Release;
 		};
