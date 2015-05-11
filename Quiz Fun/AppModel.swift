@@ -15,6 +15,11 @@ class AppModel: NSObject {
     var playerScore : Int = 0
     var playerName = ""
     
+    //voice variables
+    var voiceOn = 1
+    //default
+    var voiceRate = 0.3
+    
     //question data
     struct Questions {
         

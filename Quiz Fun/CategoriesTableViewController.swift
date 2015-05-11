@@ -47,7 +47,7 @@ class CategoriesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         
         //get corresponding category
         let category = self.categories[indexPath.row]
@@ -68,7 +68,7 @@ class CategoriesTableViewController: UITableViewController {
         
         if segue.identifier == "categoriesDetail" {
             
-            let categoriesDetail = segue.destinationViewController as QuestionViewController
+            let categoriesDetail = segue.destinationViewController as! QuestionViewController
             let indexPath = self.tableView.indexPathForSelectedRow()!
             let destinationTitle = self.categories[indexPath.row].categoryName
             let destinationDesc = self.categories[indexPath.row].categoryDesc

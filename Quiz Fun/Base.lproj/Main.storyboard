@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dzh-lf-dZq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dzh-lf-dZq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Categories-->
@@ -181,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwN-As-bcf">
-                                <rect key="frame" x="277" y="285" width="69" height="30"/>
+                                <rect key="frame" x="266" y="285" width="69" height="30"/>
                                 <state key="normal" title="Start Quiz">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -190,7 +190,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDm-ph-dlv">
-                                <rect key="frame" x="274" y="416" width="75" height="30"/>
+                                <rect key="frame" x="263" y="416" width="75" height="30"/>
                                 <state key="normal" title="Reset Quiz">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -199,7 +199,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwd-YP-6ZX">
-                                <rect key="frame" x="284" y="348" width="54" height="30"/>
+                                <rect key="frame" x="273" y="348" width="54" height="30"/>
                                 <state key="normal" title="Options">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -207,16 +207,32 @@
                                     <segue destination="mMu-xI-Tjz" kind="show" id="xF8-5s-Is1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Fun" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whb-zl-z3J">
+                                <rect key="frame" x="266" y="113" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="A Quiz game for iOS 8.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxN-61-0I6">
+                                <rect key="frame" x="208" y="142" width="185" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="iwd-YP-6ZX" secondAttribute="centerY" constant="-63" id="AMs-4L-EAU"/>
                             <constraint firstAttribute="centerY" secondItem="BDm-ph-dlv" secondAttribute="centerY" constant="-131" id="FWd-lM-HOk"/>
-                            <constraint firstAttribute="centerX" secondItem="BDm-ph-dlv" secondAttribute="centerX" constant="-11.5" id="UZQ-JJ-63X"/>
+                            <constraint firstAttribute="centerY" secondItem="HxN-61-0I6" secondAttribute="centerY" constant="147.5" id="IWa-ac-VTN"/>
+                            <constraint firstAttribute="centerX" secondItem="BDm-ph-dlv" secondAttribute="centerX" constant="-0.5" id="UZQ-JJ-63X"/>
+                            <constraint firstAttribute="centerX" secondItem="Whb-zl-z3J" secondAttribute="centerX" constant="-0.5" id="ZCr-wF-2c2"/>
                             <constraint firstItem="iwd-YP-6ZX" firstAttribute="top" secondItem="dwN-As-bcf" secondAttribute="bottom" constant="33" id="fJt-aC-mqb"/>
                             <constraint firstAttribute="centerY" secondItem="dwN-As-bcf" secondAttribute="centerY" id="fPz-Wy-a8P"/>
-                            <constraint firstAttribute="centerX" secondItem="iwd-YP-6ZX" secondAttribute="centerX" constant="-11" id="kEs-9c-uPg"/>
-                            <constraint firstAttribute="centerX" secondItem="dwN-As-bcf" secondAttribute="centerX" constant="-11.5" id="qSX-iV-8bp"/>
+                            <constraint firstAttribute="centerX" secondItem="iwd-YP-6ZX" secondAttribute="centerX" id="kEs-9c-uPg"/>
+                            <constraint firstAttribute="centerY" secondItem="Whb-zl-z3J" secondAttribute="centerY" constant="176.5" id="kaH-f5-Uyp"/>
+                            <constraint firstAttribute="centerX" secondItem="dwN-As-bcf" secondAttribute="centerX" constant="-0.5" id="qSX-iV-8bp"/>
+                            <constraint firstAttribute="centerX" secondItem="HxN-61-0I6" secondAttribute="centerX" constant="-0.5" id="uNV-sd-TJ8"/>
                             <constraint firstItem="BDm-ph-dlv" firstAttribute="top" secondItem="iwd-YP-6ZX" secondAttribute="bottom" constant="38" id="y4n-p1-gRm"/>
                         </constraints>
                     </view>
@@ -252,15 +268,52 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice On/Off" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onf-Ue-cUm">
+                                <rect key="frame" x="251" y="120" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3b-rz-sCp">
+                                <rect key="frame" x="413" y="115" width="51" height="31"/>
+                                <connections>
+                                    <action selector="mySwitch:" destination="mMu-xI-Tjz" eventType="valueChanged" id="VSu-FJ-1V5"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.29999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YfZ-5k-AAe">
+                                <rect key="frame" x="346" y="195" width="118" height="31"/>
+                                <connections>
+                                    <action selector="voiceSliderValueChanged:" destination="mMu-xI-Tjz" eventType="valueChanged" id="zEw-v4-TS8"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Pitch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0f9-8N-K3g">
+                                <rect key="frame" x="251" y="199" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="z3b-rz-sCp" firstAttribute="centerY" secondItem="onf-Ue-cUm" secondAttribute="centerY" id="713-qf-tcR"/>
+                            <constraint firstAttribute="centerY" secondItem="onf-Ue-cUm" secondAttribute="centerY" constant="170" id="7Qy-bS-ba2"/>
                             <constraint firstAttribute="centerX" secondItem="NPH-IU-zcD" secondAttribute="centerX" id="Cyq-nX-ayE"/>
                             <constraint firstAttribute="centerY" secondItem="NPH-IU-zcD" secondAttribute="centerY" constant="221.5" id="JSD-sm-ag2"/>
+                            <constraint firstAttribute="centerX" secondItem="onf-Ue-cUm" secondAttribute="centerX" id="XNO-2F-3cQ"/>
+                            <constraint firstAttribute="centerX" secondItem="0f9-8N-K3g" secondAttribute="centerX" constant="6" id="exT-Kd-HCF"/>
+                            <constraint firstItem="YfZ-5k-AAe" firstAttribute="leading" secondItem="0f9-8N-K3g" secondAttribute="trailing" constant="11" id="gjv-pv-XQG"/>
                             <constraint firstAttribute="centerY" secondItem="K2K-aP-bSU" secondAttribute="centerY" constant="-147" id="iku-bc-kp9"/>
                             <constraint firstAttribute="centerX" secondItem="K2K-aP-bSU" secondAttribute="centerX" id="k52-93-KX1"/>
+                            <constraint firstAttribute="centerY" secondItem="YfZ-5k-AAe" secondAttribute="centerY" constant="90" id="n4g-5P-XAO"/>
+                            <constraint firstItem="z3b-rz-sCp" firstAttribute="leading" secondItem="onf-Ue-cUm" secondAttribute="trailing" constant="64" id="sg4-6E-OnP"/>
+                            <constraint firstAttribute="centerY" secondItem="0f9-8N-K3g" secondAttribute="centerY" constant="90.5" id="wcS-Z4-emA"/>
+                            <constraint firstAttribute="centerX" secondItem="YfZ-5k-AAe" secondAttribute="centerX" constant="-105" id="wpi-E3-BU4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="voiceSlider" destination="YfZ-5k-AAe" id="mqo-55-crR"/>
+                        <outlet property="voiceSwitch" destination="z3b-rz-sCp" id="Y5b-Qi-7Tw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etA-Gg-D3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

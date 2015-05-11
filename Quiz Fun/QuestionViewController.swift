@@ -19,8 +19,15 @@ class QuestionViewController: UIViewController {
     @IBAction func textToSpeech(sender: UIButton) {
         //this method will convert our textfield's text to speech
         myUtterance = AVSpeechUtterance(string: questionTextField.text)
-        myUtterance.rate = 0.3
-        synth.speakUtterance(myUtterance)
+        myUtterance.rate = Float(appModel.voiceRate)
+        
+        if appModel.voiceOn == 1 {
+            
+            synth.speakUtterance(myUtterance)
+        
+        }
+        
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

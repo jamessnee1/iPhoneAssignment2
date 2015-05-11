@@ -9,11 +9,38 @@
 import UIKit
 
 class OptionsViewController: UIViewController {
+    
+    @IBOutlet var voiceSwitch: UISwitch!
+    @IBOutlet var voiceSlider: UISlider!
 
+    @IBAction func mySwitch(sender: UISwitch) {
+        
+        if voiceSwitch.on {
+            appModel.voiceOn = 1
+        }
+        else {
+            appModel.voiceOn = 0
+        }
+    }
+
+    @IBAction func voiceSliderValueChanged(sender: UISlider) {
+        //value for rate
+        appModel.voiceRate = Double(sender.value)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //check state of switch
+        if appModel.voiceOn == 1 {
+            voiceSwitch.setOn(true, animated: true)
+        }else {
+            voiceSwitch.setOn(false, animated: false)
+        }
+        
+        //get textToSpeechRate
+        voiceSlider.value = Float(appModel.voiceRate)
     }
 
     override func didReceiveMemoryWarning() {
