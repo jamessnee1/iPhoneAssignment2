@@ -71,6 +71,8 @@ class AppModel: NSObject {
         let docsDir = dirPaths[0] as! String
         databasePath = docsDir.stringByAppendingPathComponent("gameData.db")
         
+        println("directory is \(docsDir)")
+        
         //check for file
         if !filemgr.fileExistsAtPath(databasePath as String){
             
@@ -141,12 +143,19 @@ class AppModel: NSObject {
             
             let querySQL = "SELECT name, score FROM GAME"
             let results: FMResultSet? = gameDB.executeQuery(querySQL, withArgumentsInArray: nil)
-            playerName = results!.stringForColumn("name")
-            playerScore = results!.intForColumn("score")
             
             if results!.stringForColumn("name") == nil {
                 playerName = ""
+            } else {
+                
+                playerName = results!.stringForColumn("name")
+                playerScore = results!.intForColumn("score")
+            
             }
+            
+            
+            
+           
             
             gameDB.close()
             

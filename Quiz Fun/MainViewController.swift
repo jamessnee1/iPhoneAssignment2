@@ -18,6 +18,16 @@ class MainViewController: UIViewController {
 
     @IBAction func resetQuizButton(sender: UIButton) {
         
+        var error : NSError?
+        
+        if appModel.filemgr.fileExistsAtPath(appModel.databasePath as String){
+            appModel.filemgr.removeItemAtPath(appModel.databasePath as String, error: &error)
+            println("removed gameData.db")
+        
+        }else {
+            println("gamedb does not exist")
+        }
+        
         var alert = UIAlertView(title: "Quiz", message: "Successfully reset quiz!", delegate: self, cancelButtonTitle: "OK")
         alert.show()
         
