@@ -25,7 +25,12 @@ class AppModel: NSObject {
     var currentVoice = "en-AU"
     
     //current question
+    //if correctlyAnswered is 5, categoryComplete becomes 1, use this as a boolean value to 
+    //go back to the main screen
+    var currentCategory = ""
     var currentQuestion = 0
+    var correctlyAnswered = 0
+    var categoryComplete = 0
     
     //database variables
     let filemgr = NSFileManager.defaultManager()

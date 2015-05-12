@@ -24,6 +24,9 @@ class QuestionViewController: UIViewController {
     @IBAction func answer1Button(sender: UIButton) {
         println("Answer 1 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "1"){
+            //add one to correctly answered
+            appModel.correctlyAnswered+=1
+            self.performSegueWithIdentifier("correctlyAnswered", sender: self)
             
         }
         else {
@@ -35,7 +38,9 @@ class QuestionViewController: UIViewController {
     @IBAction func answer2Button(sender: UIButton) {
         println("Answer 2 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "2"){
-            
+            //add one to correctly answered
+            appModel.correctlyAnswered+=1
+            self.performSegueWithIdentifier("correctlyAnswered", sender: self)
         }
         else {
             shakeText(answer2Text)
@@ -46,6 +51,9 @@ class QuestionViewController: UIViewController {
     @IBAction func answer3Button(sender: UIButton) {
         println("Answer 3 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "3"){
+            //add one to correctly answered
+            appModel.correctlyAnswered+=1
+            self.performSegueWithIdentifier("correctlyAnswered", sender: self)
         }
         else {
             shakeText(answer3Text)
@@ -56,6 +64,9 @@ class QuestionViewController: UIViewController {
     @IBAction func answer4Button(sender: UIButton) {
         println("Answer 4 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "4"){
+            //add one to correctly answered
+            appModel.correctlyAnswered+=1
+            self.performSegueWithIdentifier("correctlyAnswered", sender: self)
         }
         else {
             shakeText(answer4Text)
@@ -133,6 +144,7 @@ class QuestionViewController: UIViewController {
         button.layer.addAnimation(animation, forKey: "position")
         
     }
+    
     
     
 

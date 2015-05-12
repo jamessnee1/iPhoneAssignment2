@@ -140,11 +140,63 @@
                         <outlet property="answer4Text" destination="PW2-pf-BgI" id="ufW-Ek-MGQ"/>
                         <outlet property="questionTextField" destination="U1H-qT-dP3" id="5VB-K0-xaq"/>
                         <outlet property="scoreLabel" destination="LlF-1w-hSU" id="mGP-dP-FGf"/>
+                        <segue destination="NSU-1e-ay4" kind="show" identifier="correctlyAnswered" id="4qV-NU-cD6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQT-8I-sAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2398" y="435"/>
+        </scene>
+        <!--Success View Controller-->
+        <scene sceneID="fTG-Lh-92z">
+            <objects>
+                <viewController id="NSU-1e-ay4" customClass="SuccessViewController" customModule="Quiz_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ExD-zr-Rcv"/>
+                        <viewControllerLayoutGuide type="bottom" id="msJ-39-2Rg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="keh-ko-oA2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="16y-kI-Bmw">
+                                <rect key="frame" x="158" y="54" width="284" height="162"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="FH7-UR-e4B"/>
+                                </constraints>
+                                <string key="text">Congratulations! You answered the question correctly! You have answered \(appModel.correctlyAnswered)/5 questions in the \(appModel.currentCategory) Category correctly! You have answered 1/30 questions correctly overall!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N74-rt-vQr">
+                                <rect key="frame" x="252" y="352" width="96" height="30"/>
+                                <state key="normal" title="Next question">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share your progress!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1v-53-6bw">
+                                <rect key="frame" x="220" y="425" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="16y-kI-Bmw" secondAttribute="centerY" constant="165" id="DNV-O8-Iuu"/>
+                            <constraint firstAttribute="centerX" secondItem="16y-kI-Bmw" secondAttribute="centerX" id="GP7-Hk-WGb"/>
+                            <constraint firstAttribute="centerX" secondItem="N74-rt-vQr" secondAttribute="centerX" id="JCZ-9t-hXV"/>
+                            <constraint firstAttribute="centerY" secondItem="N74-rt-vQr" secondAttribute="centerY" constant="-67" id="KCB-b8-j4n"/>
+                            <constraint firstAttribute="centerY" secondItem="B1v-53-6bw" secondAttribute="centerY" constant="-135.5" id="SIf-MI-Nzc"/>
+                            <constraint firstAttribute="centerX" secondItem="B1v-53-6bw" secondAttribute="centerX" id="clg-QP-K6Q"/>
+                            <constraint firstItem="16y-kI-Bmw" firstAttribute="top" secondItem="ExD-zr-Rcv" secondAttribute="bottom" constant="34" id="p8z-6Z-cSt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h8Y-4H-lhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3106" y="435"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tdN-v5-Ft2">
