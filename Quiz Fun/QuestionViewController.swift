@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 class QuestionViewController: UIViewController {
+    
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionTextField: UITextView!
     @IBOutlet var answer1Text: UIButton!
@@ -24,8 +25,6 @@ class QuestionViewController: UIViewController {
     @IBAction func answer1Button(sender: UIButton) {
         println("Answer 1 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "1"){
-            //add one to correctly answered
-            appModel.correctlyAnswered+=1
             self.performSegueWithIdentifier("correctlyAnswered", sender: self)
             
         }
@@ -38,8 +37,6 @@ class QuestionViewController: UIViewController {
     @IBAction func answer2Button(sender: UIButton) {
         println("Answer 2 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "2"){
-            //add one to correctly answered
-            appModel.correctlyAnswered+=1
             self.performSegueWithIdentifier("correctlyAnswered", sender: self)
         }
         else {
@@ -51,8 +48,6 @@ class QuestionViewController: UIViewController {
     @IBAction func answer3Button(sender: UIButton) {
         println("Answer 3 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "3"){
-            //add one to correctly answered
-            appModel.correctlyAnswered+=1
             self.performSegueWithIdentifier("correctlyAnswered", sender: self)
         }
         else {
@@ -64,8 +59,6 @@ class QuestionViewController: UIViewController {
     @IBAction func answer4Button(sender: UIButton) {
         println("Answer 4 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "4"){
-            //add one to correctly answered
-            appModel.correctlyAnswered+=1
             self.performSegueWithIdentifier("correctlyAnswered", sender: self)
         }
         else {
@@ -77,16 +70,36 @@ class QuestionViewController: UIViewController {
 
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
+    var answer1Utterance = AVSpeechUtterance(string: "")
+    var answer2Utterance = AVSpeechUtterance(string: "")
+    var answer3Utterance = AVSpeechUtterance(string: "")
+    var answer4Utterance = AVSpeechUtterance(string: "")
 
     @IBAction func textToSpeech(sender: UIButton) {
         //this method will convert our textfield's text to speech
         myUtterance = AVSpeechUtterance(string: questionTextField.text)
+        answer1Utterance = AVSpeechUtterance(string: questionArray[appModel.currentQuestion].answer1)
+        answer2Utterance = AVSpeechUtterance(string: questionArray[appModel.currentQuestion].answer2)
+        answer3Utterance = AVSpeechUtterance(string: questionArray[appModel.currentQuestion].answer3)
+        answer4Utterance = AVSpeechUtterance(string: questionArray[appModel.currentQuestion].answer4)
+        answer1Utterance.rate = Float(appModel.voiceRate)
+        answer2Utterance.rate = Float(appModel.voiceRate)
+        answer3Utterance.rate = Float(appModel.voiceRate)
+        answer4Utterance.rate = Float(appModel.voiceRate)
         myUtterance.rate = Float(appModel.voiceRate)
         myUtterance.voice = AVSpeechSynthesisVoice(language: appModel.currentVoice)
+        answer1Utterance.voice = AVSpeechSynthesisVoice(language: appModel.currentVoice)
+        answer2Utterance.voice = AVSpeechSynthesisVoice(language: appModel.currentVoice)
+        answer3Utterance.voice = AVSpeechSynthesisVoice(language: appModel.currentVoice)
+        answer4Utterance.voice = AVSpeechSynthesisVoice(language: appModel.currentVoice)
         
         if appModel.voiceOn == 1 {
             
             synth.speakUtterance(myUtterance)
+            synth.speakUtterance(answer1Utterance)
+            synth.speakUtterance(answer2Utterance)
+            synth.speakUtterance(answer3Utterance)
+            synth.speakUtterance(answer4Utterance)
         
         }
         
@@ -94,6 +107,16 @@ class QuestionViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //hide back button to not mess with game
+        self.navigationItem.hidesBackButton = true
+        
+        
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
         
         scoreLabel.text = "Player Score: \(appModel.playerScore)"
         var title = self.title
@@ -126,6 +149,9 @@ class QuestionViewController: UIViewController {
         answer3Text.setTitle(questionArray[appModel.currentQuestion].answer3, forState: UIControlState.Normal)
         answer4Text.setTitle(questionArray[appModel.currentQuestion].answer4, forState: UIControlState.Normal)
 
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -142,6 +168,15 @@ class QuestionViewController: UIViewController {
         animation.fromValue = NSValue(CGPoint: CGPointMake(button.center.x - 10, button.center.y))
         animation.toValue = NSValue(CGPoint: CGPointMake(button.center.x + 10, button.center.y))
         button.layer.addAnimation(animation, forKey: "position")
+        
+    }
+    
+    //when segue is triggered, stop voice if playing
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if synth.speaking == true {
+            synth.stopSpeakingAtBoundary(.Word)
+        }
         
     }
     

@@ -71,6 +71,8 @@ class CategoriesTableViewController: UITableViewController {
             let categoriesDetail = segue.destinationViewController as! QuestionViewController
             let indexPath = self.tableView.indexPathForSelectedRow()!
             let destinationTitle = self.categories[indexPath.row].categoryName
+            //set category in appModel
+            appModel.currentCategory = destinationTitle
             let destinationDesc = self.categories[indexPath.row].categoryDesc
             categoriesDetail.title = destinationTitle
             

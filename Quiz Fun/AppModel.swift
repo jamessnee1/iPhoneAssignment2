@@ -31,7 +31,9 @@ class AppModel: NSObject {
     var currentQuestion = 0
     var correctlyAnswered = 0
     var categoryComplete = 0
+    var overallQuestionsAnswered = 0
     
+        
     //database variables
     let filemgr = NSFileManager.defaultManager()
     let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)!
