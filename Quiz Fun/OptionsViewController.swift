@@ -8,13 +8,14 @@
 
 import UIKit
 
-class OptionsViewController: UIViewController {
+class OptionsViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet var voiceSwitch: UISwitch!
     @IBOutlet var voiceSlider: UISlider!
 
     @IBAction func mySwitch(sender: UISwitch) {
         
+        //check if voice switch on or off
         if voiceSwitch.on {
             appModel.voiceOn = 1
         }
@@ -30,6 +31,9 @@ class OptionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set first value in picker to first item of the voices array
+        appModel.currentVoice = appModel.voices[0]
 
         // Do any additional setup after loading the view.
         //check state of switch
@@ -51,6 +55,33 @@ class OptionsViewController: UIViewController {
     @IBAction func backButton(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    //picker view methods
+    //how many spinners we have
+    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
+        return 1
+    }
+    
+    //return number of items in array
+    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
+        return appModel.voices.count
+    }
+    
+    //return all of the elements, one per line of the pickerview
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return appModel.voices[row]
+    }
+    
+    //selected row
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        var selectedItem = appModel.voices[row]
+        appModel.currentVoice = selectedItem
+        println("Selected: \(selectedItem)")
+        
+        
+    }
+    
 
     /*
     // MARK: - Navigation

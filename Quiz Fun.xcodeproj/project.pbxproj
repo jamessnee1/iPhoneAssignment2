@@ -17,7 +17,6 @@
 		4E27E7CA1B006C1D00E093B2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27E7C91B006C1D00E093B2 /* Category.swift */; };
 		4E27E7CC1B00709400E093B2 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27E7CB1B00709400E093B2 /* QuestionViewController.swift */; };
 		5966B8971B00978500772FE9 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966B8961B00978500772FE9 /* OptionsViewController.swift */; };
-		5966B8991B009AAB00772FE9 /* EnterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966B8981B009AAB00772FE9 /* EnterNameViewController.swift */; };
 		5981AA921B007BA3006D33F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981AA911B007BA3006D33F7 /* MainViewController.swift */; };
 		5981AA941B00829F006D33F7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5981AA931B00829F006D33F7 /* libsqlite3.dylib */; };
 		59F0CE201B00EE8C004BFCF5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0CE171B00EE8C004BFCF5 /* FMDatabase.m */; };
@@ -52,7 +51,6 @@
 		4E27E7C91B006C1D00E093B2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4E27E7CB1B00709400E093B2 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		5966B8961B00978500772FE9 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
-		5966B8981B009AAB00772FE9 /* EnterNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterNameViewController.swift; sourceTree = "<group>"; };
 		5981AA911B007BA3006D33F7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5981AA931B00829F006D33F7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		59F0CE141B00EE8B004BFCF5 /* Quiz Fun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quiz Fun-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				4E27E7C71B006B7100E093B2 /* CategoriesTableViewController.swift */,
 				4E27E7CB1B00709400E093B2 /* QuestionViewController.swift */,
 				5966B8961B00978500772FE9 /* OptionsViewController.swift */,
-				5966B8981B009AAB00772FE9 /* EnterNameViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -297,7 +294,6 @@
 				5981AA921B007BA3006D33F7 /* MainViewController.swift in Sources */,
 				4E27E7A41B0069DF00E093B2 /* AppDelegate.swift in Sources */,
 				59F0CE221B00EE8C004BFCF5 /* FMDatabaseQueue.m in Sources */,
-				5966B8991B009AAB00772FE9 /* EnterNameViewController.swift in Sources */,
 				4E27E7CA1B006C1D00E093B2 /* Category.swift in Sources */,
 				59F0CE231B00EE8C004BFCF5 /* FMDatabaseAdditions.m in Sources */,
 			);

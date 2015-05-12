@@ -20,6 +20,10 @@ class AppModel: NSObject {
     //default
     var voiceRate = 0.3
     
+    //array of different voices
+    var voices = ["en-AU", "en-US", "en-IE","en-ZA","en-GB"]
+    var currentVoice = "en-US"
+    
     //database variables
     let filemgr = NSFileManager.defaultManager()
     let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)!

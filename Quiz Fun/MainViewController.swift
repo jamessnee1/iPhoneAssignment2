@@ -23,6 +23,8 @@ class MainViewController: UIViewController {
         if appModel.filemgr.fileExistsAtPath(appModel.databasePath as String){
             appModel.filemgr.removeItemAtPath(appModel.databasePath as String, error: &error)
             println("removed gameData.db")
+            //create new database file
+            appModel.setupDatabase()
         
         }else {
             println("gamedb does not exist")
@@ -44,23 +46,6 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        appModel.retrievePlayer()
-        
-        if appModel.playerName == "" {
-        //no player, execute new player page
-            performSegueWithIdentifier("ifNoPlayer", sender: self)
-        
-        }
-        else {
-            performSegueWithIdentifier("newGameWithPlayer", sender: self)
-        
-        }
-        
-        
     }
     
 

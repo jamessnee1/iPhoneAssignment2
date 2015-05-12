@@ -20,8 +20,10 @@ class QuestionViewController: UIViewController {
         //this method will convert our textfield's text to speech
         myUtterance = AVSpeechUtterance(string: questionTextField.text)
         myUtterance.rate = Float(appModel.voiceRate)
+        myUtterance.voice = AVSpeechSynthesisVoice(language: appModel.currentVoice)
         
         if appModel.voiceOn == 1 {
+            
             
             synth.speakUtterance(myUtterance)
         
