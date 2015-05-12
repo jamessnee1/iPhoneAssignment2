@@ -58,7 +58,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1H-qT-dP3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1H-qT-dP3">
                                 <rect key="frame" x="180" y="150" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -82,24 +82,36 @@
                                 <state key="normal" title="Answer 1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="answer1Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="aa6-uB-oUS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-9B-T4u">
                                 <rect key="frame" x="268" y="397" width="64" height="30"/>
                                 <state key="normal" title="Answer 2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="answer2Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="XmK-Qh-GxO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOa-uy-ScW">
                                 <rect key="frame" x="268" y="457" width="64" height="30"/>
                                 <state key="normal" title="Answer 3">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="answer3Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="xgJ-Pd-FFD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW2-pf-BgI">
                                 <rect key="frame" x="268" y="524" width="64" height="30"/>
                                 <state key="normal" title="Answer 4">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="answer4Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="PKW-cW-IeE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -122,6 +134,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="answer1Text" destination="QGS-ED-s9U" id="XAh-KJ-d8D"/>
+                        <outlet property="answer2Text" destination="TXs-9B-T4u" id="WuU-32-9Kg"/>
+                        <outlet property="answer3Text" destination="gOa-uy-ScW" id="Exy-4d-Isy"/>
+                        <outlet property="answer4Text" destination="PW2-pf-BgI" id="ufW-Ek-MGQ"/>
                         <outlet property="questionTextField" destination="U1H-qT-dP3" id="5VB-K0-xaq"/>
                         <outlet property="scoreLabel" destination="LlF-1w-hSU" id="mGP-dP-FGf"/>
                     </connections>

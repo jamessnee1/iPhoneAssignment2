@@ -22,7 +22,10 @@ class AppModel: NSObject {
     
     //array of different voices
     var voices = ["en-AU", "en-US", "en-IE","en-ZA","en-GB"]
-    var currentVoice = "en-US"
+    var currentVoice = "en-AU"
+    
+    //current question
+    var currentQuestion = 0
     
     //database variables
     let filemgr = NSFileManager.defaultManager()

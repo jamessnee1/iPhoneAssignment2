@@ -18,9 +18,11 @@ class OptionsViewController: UIViewController, UIPickerViewDelegate {
         //check if voice switch on or off
         if voiceSwitch.on {
             appModel.voiceOn = 1
+            println("voiceOn = 1")
         }
         else {
             appModel.voiceOn = 0
+            println("voiceOn = 0")
         }
     }
 
