@@ -26,6 +26,7 @@ class QuestionViewController: UIViewController {
             
             
             synth.speakUtterance(myUtterance)
+            synth.pauseSpeakingAtBoundary(.Word)
         
         }
         
@@ -43,6 +44,7 @@ class QuestionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
