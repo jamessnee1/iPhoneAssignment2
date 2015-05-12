@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //set up database
         appModel.setupDatabase()
+        //retrieve player data
+        appModel.retrievePlayer()
         
         return true
     }

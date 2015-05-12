@@ -13,7 +13,6 @@ class AppModel: NSObject {
     
     //stores how many questions the player has answered correctly
     var playerScore : Int32 = 0
-    var playerName = ""
     
     //voice variables
     var voiceOn = 1
@@ -31,7 +30,7 @@ class AppModel: NSObject {
     var currentQuestion = 0
     var correctlyAnswered = 0
     var categoryComplete = 0
-    var overallQuestionsAnswered = 0
+    var overallQuestionsAnswered : Int32 = 0
     
         
     //database variables
@@ -130,7 +129,7 @@ class AppModel: NSObject {
                 
                 println("Connected to SQLite Game Database")
                 println("Executing statement")
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS GAME (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, SCORE INTEGER)"
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS GAME (SCORE INTEGER, QUESTIONSANSWERED INTEGER)"
                 println(sql_stmt)
                 if !gameDB.executeStatements(sql_stmt){
                     println("Error: \(gameDB.lastErrorMessage())")
@@ -155,7 +154,9 @@ class AppModel: NSObject {
         //open database
         if gameDB.open() {
             
-            let insertSQL = "INSERT INTO GAME (name, score) VALUES ('\(playerName)', '\(playerScore)')"
+            //let insertSQL = "INSERT INTO GAME (score, questionsanswered) VALUES ('\(playerScore), '\(overallQuestionsAnswered)')"
+            let insertSQL = "INSERT INTO GAME VALUES ('\(playerScore)', '\(overallQuestionsAnswered)')"
+            println("Save data query: \(insertSQL)")
             
             let result = gameDB.executeUpdate(insertSQL, withArgumentsInArray: nil)
             
@@ -183,22 +184,14 @@ class AppModel: NSObject {
         //open database
         if gameDB.open(){
             
-            let querySQL = "SELECT name, score FROM GAME"
+            let querySQL = "SELECT SCORE, QUESTIONSANSWERED FROM GAME"
             let results: FMResultSet? = gameDB.executeQuery(querySQL, withArgumentsInArray: nil)
-            
-            if results!.stringForColumn("name") == nil {
-                playerName = ""
-            } else {
-                
-                playerName = results!.stringForColumn("name")
-                playerScore = results!.intForColumn("score")
-            
-            }
-            
-            
-            
-           
-            
+   
+            playerScore = results!.intForColumn("score")
+            overallQuestionsAnswered = results!.intForColumn("questionsanswered")
+            println("retrieved saved player stats.")
+            println("Player score: \(playerScore), Overall questions answered: \(overallQuestionsAnswered)")
+
             gameDB.close()
             
         

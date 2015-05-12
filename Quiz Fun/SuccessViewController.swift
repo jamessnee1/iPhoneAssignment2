@@ -7,12 +7,59 @@
 //
 
 import UIKit
+import Social
 
 class SuccessViewController: UIViewController {
     
     @IBOutlet var nextQuestionButton: UIButton!
     @IBOutlet var successText: UITextView!
     
+    
+    //share to twitter
+    @IBAction func twitterShare(sender: UIButton){
+        
+        //create compose sheet
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
+            
+            var twitterSheet : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            twitterSheet.setInitialText("I answered a question right on Quiz Fun! Currently sitting on \(appModel.playerScore) points. Download from the App Store today!")
+            self.presentViewController(twitterSheet, animated: true, completion: nil)
+            
+        
+        }else {
+            
+            //if not logged in, throw error
+            var alert = UIAlertController(title: "Accounts", message: "Please login to Twitter on device. You can do this by going to your device's settings.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
+        
+    
+    }
+    
+    //share to facebook
+    @IBAction func facebookShare(sender: UIButton) {
+        
+        //create compose sheet
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+        
+            var facebookSheet : SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            facebookSheet.setInitialText("I answered a question right on Quiz Fun! Currently sitting on \(appModel.playerScore) points. Download from the App Store today!")
+            self.presentViewController(facebookSheet, animated: true, completion: nil)
+            
+        }else {
+        
+            //if not logged in, throw error
+            var alert = UIAlertController(title: "Accounts", message: "Please login to Facebook on device. You can do this by going to your device's settings.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        
+        }
+    }
+    
+    
+    //next button function
     @IBAction func nextButton(sender: UIButton) {
         
         if let navigationController = self.navigationController {
@@ -48,6 +95,9 @@ class SuccessViewController: UIViewController {
         var text = "Congratulations! You answered the question correctly! You have answered \(appModel.correctlyAnswered)/5 questions in the \(appModel.currentCategory) category correctly! You have answered \(appModel.overallQuestionsAnswered)/30 questions overall!"
         
         successText.text = text
+        
+        //save data to database
+        appModel.saveData()
         
         //check for game completion
         if (appModel.currentQuestion == 5){

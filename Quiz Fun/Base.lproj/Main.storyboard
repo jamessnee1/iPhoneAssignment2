@@ -184,16 +184,38 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtZ-7U-BUt">
+                                <rect key="frame" x="158" y="491" width="68" height="30"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookShare:" destination="NSU-1e-ay4" eventType="touchUpInside" id="c2B-kj-UbQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bo-h8-jwT">
+                                <rect key="frame" x="415" y="491" width="46" height="30"/>
+                                <state key="normal" title="Twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitterShare:" destination="NSU-1e-ay4" eventType="touchUpInside" id="7kw-Rd-PCN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="UtZ-7U-BUt" secondAttribute="centerY" constant="-206" id="6JP-WV-sMt"/>
                             <constraint firstAttribute="centerY" secondItem="16y-kI-Bmw" secondAttribute="centerY" constant="165" id="DNV-O8-Iuu"/>
                             <constraint firstAttribute="centerX" secondItem="16y-kI-Bmw" secondAttribute="centerX" id="GP7-Hk-WGb"/>
+                            <constraint firstAttribute="centerX" secondItem="8bo-h8-jwT" secondAttribute="centerX" constant="-138" id="HnW-NN-cY4"/>
                             <constraint firstAttribute="centerX" secondItem="N74-rt-vQr" secondAttribute="centerX" id="JCZ-9t-hXV"/>
                             <constraint firstAttribute="centerY" secondItem="N74-rt-vQr" secondAttribute="centerY" constant="-67" id="KCB-b8-j4n"/>
                             <constraint firstAttribute="centerY" secondItem="B1v-53-6bw" secondAttribute="centerY" constant="-135.5" id="SIf-MI-Nzc"/>
                             <constraint firstAttribute="centerX" secondItem="B1v-53-6bw" secondAttribute="centerX" id="clg-QP-K6Q"/>
                             <constraint firstItem="16y-kI-Bmw" firstAttribute="top" secondItem="ExD-zr-Rcv" secondAttribute="bottom" constant="-10" id="p8z-6Z-cSt"/>
+                            <constraint firstAttribute="centerY" secondItem="8bo-h8-jwT" secondAttribute="centerY" constant="-206" id="vZh-gH-Td6"/>
+                            <constraint firstAttribute="centerX" secondItem="UtZ-7U-BUt" secondAttribute="centerX" constant="108" id="wj1-kV-Y4H"/>
                         </constraints>
                     </view>
                     <connections>
