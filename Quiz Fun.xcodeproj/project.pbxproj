@@ -17,6 +17,7 @@
 		4E27E7CA1B006C1D00E093B2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27E7C91B006C1D00E093B2 /* Category.swift */; };
 		4E27E7CC1B00709400E093B2 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27E7CB1B00709400E093B2 /* QuestionViewController.swift */; };
 		59132BF01B024A67000EF7E3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59132BEF1B024A67000EF7E3 /* Social.framework */; };
+		59661FCF1B09C9E9009A5810 /* quizlogo.tif in Resources */ = {isa = PBXBuildFile; fileRef = 59661FCE1B09C9E9009A5810 /* quizlogo.tif */; };
 		5966B8971B00978500772FE9 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966B8961B00978500772FE9 /* OptionsViewController.swift */; };
 		5981AA921B007BA3006D33F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981AA911B007BA3006D33F7 /* MainViewController.swift */; };
 		5981AA941B00829F006D33F7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5981AA931B00829F006D33F7 /* libsqlite3.dylib */; };
@@ -53,6 +54,7 @@
 		4E27E7C91B006C1D00E093B2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4E27E7CB1B00709400E093B2 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		59132BEF1B024A67000EF7E3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		59661FCE1B09C9E9009A5810 /* quizlogo.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = quizlogo.tif; path = Assets/quizlogo.tif; sourceTree = "<group>"; };
 		5966B8961B00978500772FE9 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		5981AA911B007BA3006D33F7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5981AA931B00829F006D33F7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -114,6 +116,7 @@
 		4E27E7A01B0069DF00E093B2 /* Quiz Fun */ = {
 			isa = PBXGroup;
 			children = (
+				59661FCD1B09C9CC009A5810 /* Assets */,
 				59F0CE131B00EE7D004BFCF5 /* FMDB */,
 				4E27E7C41B0069F400E093B2 /* ViewController */,
 				4E27E7C31B0069ED00E093B2 /* Model */,
@@ -170,6 +173,14 @@
 				59E0FBF31B01A5CE00C705EE /* SuccessViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		59661FCD1B09C9CC009A5810 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				59661FCE1B09C9E9009A5810 /* quizlogo.tif */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		59F0CE131B00EE7D004BFCF5 /* FMDB */ = {
@@ -274,6 +285,7 @@
 				4E27E7A91B0069DF00E093B2 /* Main.storyboard in Resources */,
 				4E27E7AE1B0069DF00E093B2 /* LaunchScreen.xib in Resources */,
 				4E27E7AB1B0069DF00E093B2 /* Images.xcassets in Resources */,
+				59661FCF1B09C9E9009A5810 /* quizlogo.tif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

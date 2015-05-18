@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dzh-lf-dZq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dzh-lf-dZq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -279,12 +279,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quizlogo.tif" translatesAutoresizingMaskIntoConstraints="NO" id="yki-nN-adw">
+                                <rect key="frame" x="0.0" y="39" width="600" height="197"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="iwd-YP-6ZX" secondAttribute="centerY" constant="-63" id="AMs-4L-EAU"/>
                             <constraint firstAttribute="centerY" secondItem="BDm-ph-dlv" secondAttribute="centerY" constant="-131" id="FWd-lM-HOk"/>
                             <constraint firstAttribute="centerY" secondItem="HxN-61-0I6" secondAttribute="centerY" constant="147.5" id="IWa-ac-VTN"/>
+                            <constraint firstAttribute="centerX" secondItem="yki-nN-adw" secondAttribute="centerX" id="PdJ-VC-aUW"/>
                             <constraint firstAttribute="centerX" secondItem="BDm-ph-dlv" secondAttribute="centerX" constant="-0.5" id="UZQ-JJ-63X"/>
                             <constraint firstAttribute="centerX" secondItem="Whb-zl-z3J" secondAttribute="centerX" constant="-0.5" id="ZCr-wF-2c2"/>
                             <constraint firstItem="iwd-YP-6ZX" firstAttribute="top" secondItem="dwN-As-bcf" secondAttribute="bottom" constant="33" id="fJt-aC-mqb"/>
@@ -293,7 +297,10 @@
                             <constraint firstAttribute="centerY" secondItem="Whb-zl-z3J" secondAttribute="centerY" constant="176.5" id="kaH-f5-Uyp"/>
                             <constraint firstAttribute="centerX" secondItem="dwN-As-bcf" secondAttribute="centerX" constant="-0.5" id="qSX-iV-8bp"/>
                             <constraint firstAttribute="centerX" secondItem="HxN-61-0I6" secondAttribute="centerX" constant="-0.5" id="uNV-sd-TJ8"/>
+                            <constraint firstAttribute="centerY" secondItem="yki-nN-adw" secondAttribute="centerY" constant="162.5" id="uhZ-sA-Vof"/>
+                            <constraint firstItem="yki-nN-adw" firstAttribute="leading" secondItem="hjH-ap-mAD" secondAttribute="leading" id="v6B-1F-2p2"/>
                             <constraint firstItem="BDm-ph-dlv" firstAttribute="top" secondItem="iwd-YP-6ZX" secondAttribute="bottom" constant="38" id="y4n-p1-gRm"/>
+                            <constraint firstItem="yki-nN-adw" firstAttribute="top" secondItem="gUx-4o-zCG" secondAttribute="bottom" constant="19" id="z8H-6R-DIS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -412,4 +419,7 @@
             <point key="canvasLocation" x="1029" y="435"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="quizlogo.tif" width="1242" height="500"/>
+    </resources>
 </document>
