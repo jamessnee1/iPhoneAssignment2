@@ -16,6 +16,9 @@
 		4E27E7C81B006B7100E093B2 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27E7C71B006B7100E093B2 /* CategoriesTableViewController.swift */; };
 		4E27E7CA1B006C1D00E093B2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27E7C91B006C1D00E093B2 /* Category.swift */; };
 		4E27E7CC1B00709400E093B2 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27E7CB1B00709400E093B2 /* QuestionViewController.swift */; };
+		590E28631B0AF35400859DDE /* background.tif in Resources */ = {isa = PBXBuildFile; fileRef = 590E28621B0AF35400859DDE /* background.tif */; };
+		590E28661B0AF52300859DDE /* buttonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E28641B0AF52300859DDE /* buttonNormal.png */; };
+		590E28671B0AF52300859DDE /* buttonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E28651B0AF52300859DDE /* buttonPressed.png */; };
 		59132BF01B024A67000EF7E3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59132BEF1B024A67000EF7E3 /* Social.framework */; };
 		59661FCF1B09C9E9009A5810 /* quizlogo.tif in Resources */ = {isa = PBXBuildFile; fileRef = 59661FCE1B09C9E9009A5810 /* quizlogo.tif */; };
 		5966B8971B00978500772FE9 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966B8961B00978500772FE9 /* OptionsViewController.swift */; };
@@ -53,6 +56,10 @@
 		4E27E7C71B006B7100E093B2 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		4E27E7C91B006C1D00E093B2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4E27E7CB1B00709400E093B2 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		590E28611B0AF06A00859DDE /* click.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.aif; sourceTree = "<group>"; };
+		590E28621B0AF35400859DDE /* background.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = background.tif; path = Assets/background.tif; sourceTree = "<group>"; };
+		590E28641B0AF52300859DDE /* buttonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonNormal.png; path = Assets/buttonNormal.png; sourceTree = "<group>"; };
+		590E28651B0AF52300859DDE /* buttonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonPressed.png; path = Assets/buttonPressed.png; sourceTree = "<group>"; };
 		59132BEF1B024A67000EF7E3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		59661FCE1B09C9E9009A5810 /* quizlogo.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = quizlogo.tif; path = Assets/quizlogo.tif; sourceTree = "<group>"; };
 		5966B8961B00978500772FE9 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +123,7 @@
 		4E27E7A01B0069DF00E093B2 /* Quiz Fun */ = {
 			isa = PBXGroup;
 			children = (
+				590E28611B0AF06A00859DDE /* click.aif */,
 				59661FCD1B09C9CC009A5810 /* Assets */,
 				59F0CE131B00EE7D004BFCF5 /* FMDB */,
 				4E27E7C41B0069F400E093B2 /* ViewController */,
@@ -178,6 +186,9 @@
 		59661FCD1B09C9CC009A5810 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				590E28641B0AF52300859DDE /* buttonNormal.png */,
+				590E28651B0AF52300859DDE /* buttonPressed.png */,
+				590E28621B0AF35400859DDE /* background.tif */,
 				59661FCE1B09C9E9009A5810 /* quizlogo.tif */,
 			);
 			name = Assets;
@@ -283,8 +294,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E27E7A91B0069DF00E093B2 /* Main.storyboard in Resources */,
+				590E28631B0AF35400859DDE /* background.tif in Resources */,
 				4E27E7AE1B0069DF00E093B2 /* LaunchScreen.xib in Resources */,
+				590E28671B0AF52300859DDE /* buttonPressed.png in Resources */,
 				4E27E7AB1B0069DF00E093B2 /* Images.xcassets in Resources */,
+				590E28661B0AF52300859DDE /* buttonNormal.png in Resources */,
 				59661FCF1B09C9E9009A5810 /* quizlogo.tif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

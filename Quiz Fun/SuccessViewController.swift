@@ -8,12 +8,31 @@
 
 import UIKit
 import Social
+import AVFoundation
 
 class SuccessViewController: UIViewController {
     
     @IBOutlet var nextQuestionButton: UIButton!
     @IBOutlet var successText: UITextView!
     
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "")
+    
+    @IBAction func speakSuccessMessage(sender: UIButton) {
+        
+        myUtterance = AVSpeechUtterance(string: successText.text)
+        myUtterance.rate = Float(appModel.voiceRate)
+        myUtterance.voice = AVSpeechSynthesisVoice(language: appModel.currentVoice)
+        
+        if appModel.voiceOn == 1 {
+            
+            synth.speakUtterance(myUtterance)
+                        
+        }
+
+        
+        
+    }
     
     //share to twitter
     @IBAction func twitterShare(sender: UIButton){

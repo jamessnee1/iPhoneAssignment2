@@ -202,10 +202,20 @@
                                     <action selector="twitterShare:" destination="NSU-1e-ay4" eventType="touchUpInside" id="7kw-Rd-PCN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pn2-ZS-A4T">
+                                <rect key="frame" x="128" y="124" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="speakSuccessMessage:" destination="NSU-1e-ay4" eventType="touchUpInside" id="ezH-Q4-cNN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="UtZ-7U-BUt" secondAttribute="centerY" constant="-206" id="6JP-WV-sMt"/>
+                            <constraint firstAttribute="centerY" secondItem="Pn2-ZS-A4T" secondAttribute="centerY" constant="165" id="AJS-4k-POw"/>
                             <constraint firstAttribute="centerY" secondItem="16y-kI-Bmw" secondAttribute="centerY" constant="165" id="DNV-O8-Iuu"/>
                             <constraint firstAttribute="centerX" secondItem="16y-kI-Bmw" secondAttribute="centerX" id="GP7-Hk-WGb"/>
                             <constraint firstAttribute="centerX" secondItem="8bo-h8-jwT" secondAttribute="centerX" constant="-138" id="HnW-NN-cY4"/>
@@ -214,6 +224,7 @@
                             <constraint firstAttribute="centerY" secondItem="B1v-53-6bw" secondAttribute="centerY" constant="-135.5" id="SIf-MI-Nzc"/>
                             <constraint firstAttribute="centerX" secondItem="B1v-53-6bw" secondAttribute="centerX" id="clg-QP-K6Q"/>
                             <constraint firstItem="16y-kI-Bmw" firstAttribute="top" secondItem="ExD-zr-Rcv" secondAttribute="bottom" constant="-10" id="p8z-6Z-cSt"/>
+                            <constraint firstAttribute="centerX" secondItem="Pn2-ZS-A4T" secondAttribute="centerX" constant="161" id="r1n-7O-60W"/>
                             <constraint firstAttribute="centerY" secondItem="8bo-h8-jwT" secondAttribute="centerY" constant="-206" id="vZh-gH-Td6"/>
                             <constraint firstAttribute="centerX" secondItem="UtZ-7U-BUt" secondAttribute="centerX" constant="108" id="wj1-kV-Y4H"/>
                         </constraints>
@@ -239,74 +250,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwN-As-bcf">
-                                <rect key="frame" x="266" y="285" width="69" height="30"/>
-                                <state key="normal" title="Start Quiz">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwN-As-bcf">
+                                <rect key="frame" x="213" y="285" width="174" height="30"/>
+                                <state key="normal" title="Start Quiz" backgroundImage="buttonNormal.png">
+                                    <color key="titleColor" red="0.34319617327619101" green="0.63663819339624916" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="buttonPressed.png"/>
                                 <connections>
                                     <action selector="startButton:" destination="dzh-lf-dZq" eventType="touchUpInside" id="Csf-Ry-rsO"/>
                                     <segue destination="H6t-i3-M8V" kind="show" identifier="newGameWithPlayer" id="66q-yD-99P"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDm-ph-dlv">
-                                <rect key="frame" x="263" y="416" width="75" height="30"/>
-                                <state key="normal" title="Reset Quiz">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDm-ph-dlv">
+                                <rect key="frame" x="213" y="416" width="174" height="30"/>
+                                <state key="normal" title="Reset Quiz" backgroundImage="buttonNormal.png">
+                                    <color key="titleColor" red="0.34319617327619101" green="0.63663819339624916" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="buttonPressed.png"/>
                                 <connections>
                                     <action selector="resetQuizButton:" destination="dzh-lf-dZq" eventType="touchUpInside" id="AAg-Ar-56D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwd-YP-6ZX">
-                                <rect key="frame" x="273" y="348" width="54" height="30"/>
-                                <state key="normal" title="Options">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwd-YP-6ZX">
+                                <rect key="frame" x="213" y="348" width="174" height="30"/>
+                                <state key="normal" title="Options" backgroundImage="buttonNormal.png">
+                                    <color key="titleColor" red="0.34319617327619101" green="0.63663819339624916" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="buttonPressed.png"/>
                                 <connections>
+                                    <action selector="optionsButton:" destination="dzh-lf-dZq" eventType="touchUpInside" id="0el-k2-cVw"/>
                                     <segue destination="mMu-xI-Tjz" kind="show" id="xF8-5s-Is1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Fun" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whb-zl-z3J">
-                                <rect key="frame" x="266" y="113" width="69" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="A Quiz game for iOS 8.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxN-61-0I6">
-                                <rect key="frame" x="208" y="142" width="185" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quizlogo.tif" translatesAutoresizingMaskIntoConstraints="NO" id="yki-nN-adw">
-                                <rect key="frame" x="0.0" y="39" width="600" height="197"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quizlogo.tif" translatesAutoresizingMaskIntoConstraints="NO" id="3be-ZO-0aZ">
+                                <rect key="frame" x="67" y="20" width="467" height="196"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="196" id="3Kj-H1-1dO"/>
+                                    <constraint firstAttribute="width" constant="467" id="KCg-vM-0DL"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="iwd-YP-6ZX" secondAttribute="centerY" constant="-63" id="AMs-4L-EAU"/>
-                            <constraint firstAttribute="centerY" secondItem="BDm-ph-dlv" secondAttribute="centerY" constant="-131" id="FWd-lM-HOk"/>
-                            <constraint firstAttribute="centerY" secondItem="HxN-61-0I6" secondAttribute="centerY" constant="147.5" id="IWa-ac-VTN"/>
-                            <constraint firstAttribute="centerX" secondItem="yki-nN-adw" secondAttribute="centerX" id="PdJ-VC-aUW"/>
-                            <constraint firstAttribute="centerX" secondItem="BDm-ph-dlv" secondAttribute="centerX" constant="-0.5" id="UZQ-JJ-63X"/>
-                            <constraint firstAttribute="centerX" secondItem="Whb-zl-z3J" secondAttribute="centerX" constant="-0.5" id="ZCr-wF-2c2"/>
-                            <constraint firstItem="iwd-YP-6ZX" firstAttribute="top" secondItem="dwN-As-bcf" secondAttribute="bottom" constant="33" id="fJt-aC-mqb"/>
-                            <constraint firstAttribute="centerY" secondItem="dwN-As-bcf" secondAttribute="centerY" id="fPz-Wy-a8P"/>
-                            <constraint firstAttribute="centerX" secondItem="iwd-YP-6ZX" secondAttribute="centerX" id="kEs-9c-uPg"/>
-                            <constraint firstAttribute="centerY" secondItem="Whb-zl-z3J" secondAttribute="centerY" constant="176.5" id="kaH-f5-Uyp"/>
-                            <constraint firstAttribute="centerX" secondItem="dwN-As-bcf" secondAttribute="centerX" constant="-0.5" id="qSX-iV-8bp"/>
-                            <constraint firstAttribute="centerX" secondItem="HxN-61-0I6" secondAttribute="centerX" constant="-0.5" id="uNV-sd-TJ8"/>
-                            <constraint firstAttribute="centerY" secondItem="yki-nN-adw" secondAttribute="centerY" constant="162.5" id="uhZ-sA-Vof"/>
-                            <constraint firstItem="yki-nN-adw" firstAttribute="leading" secondItem="hjH-ap-mAD" secondAttribute="leading" id="v6B-1F-2p2"/>
-                            <constraint firstItem="BDm-ph-dlv" firstAttribute="top" secondItem="iwd-YP-6ZX" secondAttribute="bottom" constant="38" id="y4n-p1-gRm"/>
-                            <constraint firstItem="yki-nN-adw" firstAttribute="top" secondItem="gUx-4o-zCG" secondAttribute="bottom" constant="19" id="z8H-6R-DIS"/>
+                            <constraint firstAttribute="centerY" secondItem="dwN-As-bcf" secondAttribute="centerY" id="AO1-rT-KDn"/>
+                            <constraint firstAttribute="centerX" secondItem="3be-ZO-0aZ" secondAttribute="centerX" constant="-0.5" id="OhZ-qD-fSF"/>
+                            <constraint firstAttribute="centerY" secondItem="3be-ZO-0aZ" secondAttribute="centerY" constant="182" id="WHV-fG-FHq"/>
+                            <constraint firstAttribute="centerY" secondItem="BDm-ph-dlv" secondAttribute="centerY" constant="-131" id="dxy-Ly-wgj"/>
+                            <constraint firstAttribute="centerX" secondItem="iwd-YP-6ZX" secondAttribute="centerX" id="nL0-P7-pcG"/>
+                            <constraint firstAttribute="centerY" secondItem="iwd-YP-6ZX" secondAttribute="centerY" constant="-63" id="o0b-nd-S7g"/>
+                            <constraint firstAttribute="centerX" secondItem="dwN-As-bcf" secondAttribute="centerX" id="vWL-3v-GZY"/>
+                            <constraint firstAttribute="centerX" secondItem="BDm-ph-dlv" secondAttribute="centerX" id="xlu-0M-GHf"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydA-Dv-kZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="435"/>
+            <point key="canvasLocation" x="284" y="446"/>
         </scene>
         <!--Options View Controller-->
         <scene sceneID="qAr-ME-c9h">
@@ -420,6 +422,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="buttonNormal.png" width="286" height="41"/>
+        <image name="buttonPressed.png" width="286" height="41"/>
         <image name="quizlogo.tif" width="1242" height="500"/>
     </resources>
 </document>

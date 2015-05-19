@@ -7,16 +7,22 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MainViewController: UIViewController {
-    
-    
-    //start button method. Checks database to see if there is a playerName in there. If not, we can create new player
-    @IBAction func startButton(sender: UIButton) {
 
+    
+    @IBAction func startButton(sender: UIButton) {
+        
+
+    }
+    @IBAction func optionsButton(sender: UIButton) {
+        
     }
 
     @IBAction func resetQuizButton(sender: UIButton) {
+        
+        
         
         var error : NSError?
         
@@ -36,8 +42,11 @@ class MainViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var error: NSError?
 
         // Do any additional setup after loading the view.
+
        
 
         

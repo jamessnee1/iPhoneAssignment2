@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 //singleton class accessable from anywhere in the app. Contains all the question data
 class AppModel: NSObject {
@@ -38,6 +39,10 @@ class AppModel: NSObject {
     let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)!
     var databasePath : String!
     
+    //sound vars
+    var audioPlayer = AVAudioPlayer()
+    //let soundURL = NSBundle.mainBundle().URLForResource("click", withExtension: "aif")
+    
 
     
     //question data
@@ -61,6 +66,7 @@ class AppModel: NSObject {
     func updateScore(score: Int32){
         playerScore = score
     }
+    
     
     //arrays of questions to pull from
     //General Knowledge
