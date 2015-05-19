@@ -118,14 +118,21 @@ class SuccessViewController: UIViewController {
         
         //hide back button to not mess with game
         self.navigationItem.hidesBackButton = true
-        
-        
+
         
         //increase the current question by 1, so when the next VC is loaded question will be updated
         appModel.currentQuestion+=1
         appModel.correctlyAnswered+=1
-        appModel.playerScore+=500
-        appModel.overallQuestionsAnswered+=1
+        
+        //if we are on the first question, do not increment score
+        if (appModel.currentQuestion != 0){
+            appModel.playerScore+=500
+        }
+        
+        //check if all 30 questions have been answered, and then do not increment the overall questions
+        if (appModel.overallQuestionsAnswered != 30){
+            appModel.overallQuestionsAnswered+=1
+        }
         
         var text = "Congratulations! You answered the question correctly! You have answered \(appModel.correctlyAnswered)/5 questions in the \(appModel.currentCategory) category correctly! You have answered \(appModel.overallQuestionsAnswered)/30 questions overall!"
         
@@ -145,6 +152,7 @@ class SuccessViewController: UIViewController {
             //set currentQuestion to 0
             appModel.currentQuestion = 0
             appModel.correctlyAnswered = 0
+            
             //show the finish game button
             finishButton.hidden = false
             finishButton.enabled = true
@@ -159,11 +167,6 @@ class SuccessViewController: UIViewController {
             nextQuestionButton.enabled = true
         }
         
-        //check if all 30 questions have been answered, and then do not increment the overall questions
-        if (appModel.overallQuestionsAnswered == 30){
-            appModel.overallQuestionsAnswered = 30
-        }
-
         // Do any additional setup after loading the view.
     }
 

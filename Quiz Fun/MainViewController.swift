@@ -37,6 +37,13 @@ class MainViewController: UIViewController {
             println("gamedb does not exist")
         }
         
+        //reset values in appModel
+        appModel.overallQuestionsAnswered = 0
+        appModel.categoryComplete = 0
+        appModel.correctlyAnswered = 0
+        appModel.currentQuestion = 0
+        appModel.playerScore = 0
+        
         var alert = UIAlertView(title: "Quiz", message: "Successfully reset quiz!", delegate: self, cancelButtonTitle: "OK")
         alert.show()
         
