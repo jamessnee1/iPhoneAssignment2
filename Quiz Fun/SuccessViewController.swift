@@ -15,6 +15,10 @@ class SuccessViewController: UIViewController {
     @IBOutlet var nextQuestionButton: UIButton!
     @IBOutlet var successText: UITextView!
     
+    @IBOutlet weak var finishButton: UIButton!
+    
+    
+    
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
     
@@ -83,8 +87,6 @@ class SuccessViewController: UIViewController {
     //next button function
     @IBAction func nextButton(sender: UIButton) {
         
-        
-        
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as! [UIViewController]
         
         if(appModel.categoryComplete == 1){
@@ -94,11 +96,11 @@ class SuccessViewController: UIViewController {
         }
         
         //only perform segue if game is finished
-        if nextQuestionButton.titleLabel == "Finish Game" {
+        if nextQuestionButton.titleLabel!.text == "Finish Game" {
             game_finished = 1;
             println("Game finished")
-            println("viewcontrollers count is \(viewControllers.count)")
-            self.navigationController?.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+            //self.performSegueWithIdentifier("gameFinished", sender: self)
+            
             
         }else {
             
@@ -117,6 +119,8 @@ class SuccessViewController: UIViewController {
         //hide back button to not mess with game
         self.navigationItem.hidesBackButton = true
         
+        
+        
         //increase the current question by 1, so when the next VC is loaded question will be updated
         appModel.currentQuestion+=1
         appModel.correctlyAnswered+=1
@@ -125,7 +129,6 @@ class SuccessViewController: UIViewController {
         
         var text = "Congratulations! You answered the question correctly! You have answered \(appModel.correctlyAnswered)/5 questions in the \(appModel.currentCategory) category correctly! You have answered \(appModel.overallQuestionsAnswered)/30 questions overall!"
         
-        var failText = "Oh no! You answered the question incorrectly! You have answered \(appModel.correctlyAnswered)/5 questions in the \(appModel.currentCategory) category correctly! You have answered \(appModel.overallQuestionsAnswered)/30 questions overall!"
         
         successText.text = text
         
@@ -138,7 +141,22 @@ class SuccessViewController: UIViewController {
         }
         
         if (appModel.categoryComplete == 1){
-            nextQuestionButton.setTitle("Finish Game", forState: UIControlState.Normal)
+            
+            //set currentQuestion to 0
+            appModel.currentQuestion = 0
+            appModel.correctlyAnswered = 0
+            //show the finish game button
+            finishButton.hidden = false
+            finishButton.enabled = true
+            nextQuestionButton.hidden = true
+            nextQuestionButton.enabled = false
+            //nextQuestionButton.setTitle("Finish Game", forState: UIControlState.Normal)
+        }
+        else {
+            finishButton.enabled = false
+            finishButton.hidden = true
+            nextQuestionButton.hidden = false
+            nextQuestionButton.enabled = true
         }
         
         //check if all 30 questions have been answered, and then do not increment the overall questions
@@ -153,6 +171,8 @@ class SuccessViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+        
     
 
     /*

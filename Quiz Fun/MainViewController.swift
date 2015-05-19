@@ -58,6 +58,14 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //unwind segue
+    @IBAction func returnToMainMenu(segue: UIStoryboardSegue) {
+        
+        //reset categoryComplete to 0
+        appModel.categoryComplete = 0
+        
+    }
+    
 
     /*
     // MARK: - Navigation

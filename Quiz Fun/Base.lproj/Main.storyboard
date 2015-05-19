@@ -77,19 +77,8 @@
                                     <action selector="textToSpeech:" destination="a0T-bx-gNn" eventType="touchUpInside" id="lKg-aX-C7Z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGS-ED-s9U">
-                                <rect key="frame" x="214" y="334" width="173" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="TTG-yH-xQp"/>
-                                    <constraint firstAttribute="width" constant="173" id="lpd-Kb-6ZJ"/>
-                                </constraints>
-                                <state key="normal" title="Answer 1"/>
-                                <connections>
-                                    <action selector="answer1Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="aa6-uB-oUS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOa-uy-ScW">
-                                <rect key="frame" x="214" y="457" width="173" height="30"/>
+                                <rect key="frame" x="138" y="457" width="325" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="c8b-Km-V0p"/>
                                 </constraints>
@@ -99,20 +88,31 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW2-pf-BgI">
-                                <rect key="frame" x="214" y="524" width="173" height="30"/>
+                                <rect key="frame" x="138" y="524" width="325" height="30"/>
                                 <state key="normal" title="Answer 4"/>
                                 <connections>
                                     <action selector="answer4Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="PKW-cW-IeE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-9B-T4u">
-                                <rect key="frame" x="214" y="397" width="173" height="30"/>
+                                <rect key="frame" x="138" y="397" width="325" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="pUw-Iu-IsH"/>
                                 </constraints>
                                 <state key="normal" title="Answer 2"/>
                                 <connections>
                                     <action selector="answer2Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="XmK-Qh-GxO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGS-ED-s9U">
+                                <rect key="frame" x="138" y="334" width="325" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TTG-yH-xQp"/>
+                                    <constraint firstAttribute="width" constant="325" id="lpd-Kb-6ZJ"/>
+                                </constraints>
+                                <state key="normal" title="Answer 1"/>
+                                <connections>
+                                    <action selector="answer1Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="aa6-uB-oUS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -232,6 +232,18 @@
                                     <action selector="speakSuccessMessage:" destination="NSU-1e-ay4" eventType="touchUpInside" id="ezH-Q4-cNN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRc-wA-qOR">
+                                <rect key="frame" x="204" y="314" width="192" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Finish Game" backgroundImage="buttonNormal.png">
+                                    <color key="titleColor" red="0.41174724359745862" green="0.62032100783744393" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="buttonPressed.png"/>
+                                <connections>
+                                    <segue destination="hPn-I4-Q9m" kind="unwind" identifier="gameFinished" unwindAction="returnToMainMenu:" id="Poz-xY-2d5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -244,6 +256,8 @@
                             <constraint firstAttribute="centerY" secondItem="B1v-53-6bw" secondAttribute="centerY" constant="-135.5" id="SIf-MI-Nzc"/>
                             <constraint firstItem="N74-rt-vQr" firstAttribute="centerX" secondItem="B1v-53-6bw" secondAttribute="centerX" id="WyT-lu-vyd"/>
                             <constraint firstAttribute="centerX" secondItem="B1v-53-6bw" secondAttribute="centerX" id="clg-QP-K6Q"/>
+                            <constraint firstAttribute="centerX" secondItem="HRc-wA-qOR" secondAttribute="centerX" id="fO4-I8-YyK"/>
+                            <constraint firstAttribute="centerY" secondItem="HRc-wA-qOR" secondAttribute="centerY" constant="-29" id="gcP-Bg-ZWp"/>
                             <constraint firstItem="16y-kI-Bmw" firstAttribute="top" secondItem="ExD-zr-Rcv" secondAttribute="bottom" constant="-10" id="p8z-6Z-cSt"/>
                             <constraint firstAttribute="centerX" secondItem="Pn2-ZS-A4T" secondAttribute="centerX" constant="161" id="r1n-7O-60W"/>
                             <constraint firstAttribute="centerY" secondItem="8bo-h8-jwT" secondAttribute="centerY" constant="-203.5" id="vZh-gH-Td6"/>
@@ -251,11 +265,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="finishButton" destination="HRc-wA-qOR" id="8ec-2O-O0a"/>
                         <outlet property="nextQuestionButton" destination="N74-rt-vQr" id="4I6-wf-L0d"/>
                         <outlet property="successText" destination="16y-kI-Bmw" id="O65-Au-09s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8Y-4H-lhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hPn-I4-Q9m" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3106" y="435"/>
         </scene>
