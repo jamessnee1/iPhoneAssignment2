@@ -71,7 +71,7 @@ class OptionsViewController: UIViewController, UIPickerViewDelegate {
     
     //return all of the elements, one per line of the pickerview
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return appModel.voices[row]
+        return appModel.voice_string[row]
     }
     
     //selected row

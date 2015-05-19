@@ -21,14 +21,21 @@ class QuestionViewController: UIViewController {
     //question data
     var questionArray : [AppModel.Questions]!
     
+    var audioPlayer = AVAudioPlayer()
+    var rightAnswer = AVAudioPlayer()
+    let wrongURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("wrong", ofType: "mp3")!)
+    let rightURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("right", ofType: "mp3")!)
+    
     //button actions
     @IBAction func answer1Button(sender: UIButton) {
         println("Answer 1 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "1"){
+            rightAnswer.play()
             self.performSegueWithIdentifier("correctlyAnswered", sender: self)
             
         }
         else {
+            audioPlayer.play()
             shakeText(answer1Text)
         }
         
@@ -37,9 +44,11 @@ class QuestionViewController: UIViewController {
     @IBAction func answer2Button(sender: UIButton) {
         println("Answer 2 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "2"){
+            rightAnswer.play()
             self.performSegueWithIdentifier("correctlyAnswered", sender: self)
         }
         else {
+            audioPlayer.play()
             shakeText(answer2Text)
         }
         
@@ -48,9 +57,11 @@ class QuestionViewController: UIViewController {
     @IBAction func answer3Button(sender: UIButton) {
         println("Answer 3 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "3"){
+            rightAnswer.play()
             self.performSegueWithIdentifier("correctlyAnswered", sender: self)
         }
         else {
+            audioPlayer.play()
             shakeText(answer3Text)
         }
 
@@ -59,9 +70,11 @@ class QuestionViewController: UIViewController {
     @IBAction func answer4Button(sender: UIButton) {
         println("Answer 4 selected")
         if (questionArray[appModel.currentQuestion].correctAnswer == "4"){
+            rightAnswer.play()
             self.performSegueWithIdentifier("correctlyAnswered", sender: self)
         }
         else {
+            audioPlayer.play()
             shakeText(answer4Text)
         }
 
@@ -107,6 +120,11 @@ class QuestionViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        audioPlayer = AVAudioPlayer(contentsOfURL: wrongURL, error: nil)
+        rightAnswer = AVAudioPlayer(contentsOfURL: rightURL, error: nil)
+        audioPlayer.prepareToPlay()
+        rightAnswer.prepareToPlay()
         
         //hide back button to not mess with game
         self.navigationItem.hidesBackButton = true
@@ -161,6 +179,7 @@ class QuestionViewController: UIViewController {
     
     func shakeText(button: UIButton){
     
+        button.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.07
         animation.repeatCount = 4

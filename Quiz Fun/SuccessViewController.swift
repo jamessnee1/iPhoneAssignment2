@@ -18,6 +18,8 @@ class SuccessViewController: UIViewController {
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
     
+    var game_finished = 0;
+    
     @IBAction func speakSuccessMessage(sender: UIButton) {
         
         myUtterance = AVSpeechUtterance(string: successText.text)
@@ -81,6 +83,8 @@ class SuccessViewController: UIViewController {
     //next button function
     @IBAction func nextButton(sender: UIButton) {
         
+        
+        
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as! [UIViewController]
         
         if(appModel.categoryComplete == 1){
@@ -91,7 +95,7 @@ class SuccessViewController: UIViewController {
         
         //only perform segue if game is finished
         if nextQuestionButton.titleLabel == "Finish Game" {
-            //self.presentingViewController?.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            game_finished = 1;
             println("Game finished")
             println("viewcontrollers count is \(viewControllers.count)")
             self.navigationController?.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
@@ -120,6 +124,8 @@ class SuccessViewController: UIViewController {
         appModel.overallQuestionsAnswered+=1
         
         var text = "Congratulations! You answered the question correctly! You have answered \(appModel.correctlyAnswered)/5 questions in the \(appModel.currentCategory) category correctly! You have answered \(appModel.overallQuestionsAnswered)/30 questions overall!"
+        
+        var failText = "Oh no! You answered the question incorrectly! You have answered \(appModel.correctlyAnswered)/5 questions in the \(appModel.currentCategory) category correctly! You have answered \(appModel.overallQuestionsAnswered)/30 questions overall!"
         
         successText.text = text
         

@@ -21,6 +21,7 @@ class AppModel: NSObject {
     var voiceRate = 0.3
     
     //array of different voices
+    var voice_string = ["Australian", "American", "Irish", "South African", "English"]
     var voices = ["en-AU", "en-US", "en-IE","en-ZA","en-GB"]
     var currentVoice = "en-AU"
     
