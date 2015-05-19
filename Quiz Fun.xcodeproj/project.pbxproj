@@ -29,6 +29,11 @@
 		5981AA941B00829F006D33F7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5981AA931B00829F006D33F7 /* libsqlite3.dylib */; };
 		59C38AAF1B0B5F2B00AA69CB /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59C38AAE1B0B5F2B00AA69CB /* wrong.mp3 */; };
 		59C38AB11B0B613600AA69CB /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59C38AB01B0B613600AA69CB /* right.mp3 */; };
+		59C38AB31B0B96B400AA69CB /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59C38AB21B0B96B400AA69CB /* music.mp3 */; };
+		59C38AB81B0B9A1600AA69CB /* appIcon-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59C38AB41B0B9A1600AA69CB /* appIcon-iPad@2x.png */; };
+		59C38AB91B0B9A1600AA69CB /* appIcon-iPad2@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59C38AB51B0B9A1600AA69CB /* appIcon-iPad2@1x.png */; };
+		59C38ABA1B0B9A1600AA69CB /* appIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59C38AB61B0B9A1600AA69CB /* appIcon@2x.png */; };
+		59C38ABB1B0B9A1600AA69CB /* appIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59C38AB71B0B9A1600AA69CB /* appIcon@3x.png */; };
 		59E0FBF41B01A5CE00C705EE /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0FBF31B01A5CE00C705EE /* SuccessViewController.swift */; };
 		59F0CE201B00EE8C004BFCF5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0CE171B00EE8C004BFCF5 /* FMDatabase.m */; };
 		59F0CE211B00EE8C004BFCF5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F0CE191B00EE8C004BFCF5 /* FMResultSet.m */; };
@@ -75,6 +80,11 @@
 		5981AA931B00829F006D33F7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		59C38AAE1B0B5F2B00AA69CB /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
 		59C38AB01B0B613600AA69CB /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
+		59C38AB21B0B96B400AA69CB /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		59C38AB41B0B9A1600AA69CB /* appIcon-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appIcon-iPad@2x.png"; path = "Assets/appIcon-iPad@2x.png"; sourceTree = "<group>"; };
+		59C38AB51B0B9A1600AA69CB /* appIcon-iPad2@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appIcon-iPad2@1x.png"; path = "Assets/appIcon-iPad2@1x.png"; sourceTree = "<group>"; };
+		59C38AB61B0B9A1600AA69CB /* appIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appIcon@2x.png"; path = "Assets/appIcon@2x.png"; sourceTree = "<group>"; };
+		59C38AB71B0B9A1600AA69CB /* appIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appIcon@3x.png"; path = "Assets/appIcon@3x.png"; sourceTree = "<group>"; };
 		59E0FBF31B01A5CE00C705EE /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		59F0CE141B00EE8B004BFCF5 /* Quiz Fun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quiz Fun-Bridging-Header.h"; sourceTree = "<group>"; };
 		59F0CE151B00EE8C004BFCF5 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
@@ -139,6 +149,10 @@
 				4E27E7C31B0069ED00E093B2 /* Model */,
 				4E27E7A71B0069DF00E093B2 /* Main.storyboard */,
 				4E27E7AA1B0069DF00E093B2 /* Images.xcassets */,
+				59C38AB41B0B9A1600AA69CB /* appIcon-iPad@2x.png */,
+				59C38AB51B0B9A1600AA69CB /* appIcon-iPad2@1x.png */,
+				59C38AB61B0B9A1600AA69CB /* appIcon@2x.png */,
+				59C38AB71B0B9A1600AA69CB /* appIcon@3x.png */,
 				4E27E7AC1B0069DF00E093B2 /* LaunchScreen.xib */,
 				4E27E7A11B0069DF00E093B2 /* Supporting Files */,
 			);
@@ -196,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				590E28611B0AF06A00859DDE /* buttonClick.aif */,
+				59C38AB21B0B96B400AA69CB /* music.mp3 */,
 				59C38AAE1B0B5F2B00AA69CB /* wrong.mp3 */,
 				59C38AB01B0B613600AA69CB /* right.mp3 */,
 				590E286A1B0AFA9B00859DDE /* fb.png */,
@@ -313,11 +328,16 @@
 				4E27E7AE1B0069DF00E093B2 /* LaunchScreen.xib in Resources */,
 				590E28671B0AF52300859DDE /* buttonPressed.png in Resources */,
 				59C38AAF1B0B5F2B00AA69CB /* wrong.mp3 in Resources */,
+				59C38ABA1B0B9A1600AA69CB /* appIcon@2x.png in Resources */,
+				59C38ABB1B0B9A1600AA69CB /* appIcon@3x.png in Resources */,
 				4E27E7AB1B0069DF00E093B2 /* Images.xcassets in Resources */,
 				590E286C1B0AFA9B00859DDE /* fb.png in Resources */,
+				59C38AB91B0B9A1600AA69CB /* appIcon-iPad2@1x.png in Resources */,
 				590E28691B0AF75100859DDE /* optionsLogo.tif in Resources */,
 				590E286D1B0AFA9B00859DDE /* twitter.png in Resources */,
+				59C38AB31B0B96B400AA69CB /* music.mp3 in Resources */,
 				59C38AB11B0B613600AA69CB /* right.mp3 in Resources */,
+				59C38AB81B0B9A1600AA69CB /* appIcon-iPad@2x.png in Resources */,
 				590E28661B0AF52300859DDE /* buttonNormal.png in Resources */,
 				59661FCF1B09C9E9009A5810 /* quizlogo.tif in Resources */,
 			);

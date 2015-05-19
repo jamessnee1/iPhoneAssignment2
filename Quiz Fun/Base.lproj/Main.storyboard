@@ -329,12 +329,23 @@
                                     <constraint firstAttribute="width" constant="467" id="KCg-vM-0DL"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rsk-rA-XkR">
+                                <rect key="frame" x="85" y="476" width="430" height="62"/>
+                                <string key="text">"George Street Shuffle" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0
+http://creativecommons.org/licenses/by/3.0/</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="dwN-As-bcf" secondAttribute="centerY" id="AO1-rT-KDn"/>
                             <constraint firstAttribute="centerX" secondItem="3be-ZO-0aZ" secondAttribute="centerX" constant="-0.5" id="OhZ-qD-fSF"/>
                             <constraint firstAttribute="centerY" secondItem="3be-ZO-0aZ" secondAttribute="centerY" constant="182" id="WHV-fG-FHq"/>
+                            <constraint firstAttribute="centerX" secondItem="Rsk-rA-XkR" secondAttribute="centerX" id="XGM-N3-kSf"/>
+                            <constraint firstAttribute="centerY" secondItem="Rsk-rA-XkR" secondAttribute="centerY" constant="-207" id="aeG-YW-A5C"/>
                             <constraint firstAttribute="centerY" secondItem="BDm-ph-dlv" secondAttribute="centerY" constant="-131" id="dxy-Ly-wgj"/>
                             <constraint firstAttribute="centerX" secondItem="iwd-YP-6ZX" secondAttribute="centerX" id="nL0-P7-pcG"/>
                             <constraint firstAttribute="centerY" secondItem="iwd-YP-6ZX" secondAttribute="centerY" constant="-63" id="o0b-nd-S7g"/>

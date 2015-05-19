@@ -11,6 +11,9 @@ import AVFoundation
 
 class MainViewController: UIViewController {
     
+    var music = AVAudioPlayer()
+    let musicURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!)
+    
     
     @IBAction func startButton(sender: UIButton) {
 
@@ -54,6 +57,11 @@ class MainViewController: UIViewController {
         var error: NSError?
 
         // Do any additional setup after loading the view.
+        //setup music
+        music = AVAudioPlayer(contentsOfURL: musicURL, error: nil)
+        music.numberOfLoops = -1
+        music.prepareToPlay()
+        music.play()
 
        
 
