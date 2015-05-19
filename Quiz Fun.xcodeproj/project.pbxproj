@@ -61,7 +61,7 @@
 		4E27E7C71B006B7100E093B2 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		4E27E7C91B006C1D00E093B2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4E27E7CB1B00709400E093B2 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		590E28611B0AF06A00859DDE /* click.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.aif; sourceTree = "<group>"; };
+		590E28611B0AF06A00859DDE /* buttonClick.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttonClick.aif; sourceTree = "<group>"; };
 		590E28621B0AF35400859DDE /* background.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = background.tif; path = Assets/background.tif; sourceTree = "<group>"; };
 		590E28641B0AF52300859DDE /* buttonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonNormal.png; path = Assets/buttonNormal.png; sourceTree = "<group>"; };
 		590E28651B0AF52300859DDE /* buttonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonPressed.png; path = Assets/buttonPressed.png; sourceTree = "<group>"; };
@@ -133,7 +133,6 @@
 		4E27E7A01B0069DF00E093B2 /* Quiz Fun */ = {
 			isa = PBXGroup;
 			children = (
-				590E28611B0AF06A00859DDE /* click.aif */,
 				59661FCD1B09C9CC009A5810 /* Assets */,
 				59F0CE131B00EE7D004BFCF5 /* FMDB */,
 				4E27E7C41B0069F400E093B2 /* ViewController */,
@@ -196,6 +195,7 @@
 		59661FCD1B09C9CC009A5810 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				590E28611B0AF06A00859DDE /* buttonClick.aif */,
 				59C38AAE1B0B5F2B00AA69CB /* wrong.mp3 */,
 				59C38AB01B0B613600AA69CB /* right.mp3 */,
 				590E286A1B0AFA9B00859DDE /* fb.png */,

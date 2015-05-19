@@ -25,6 +25,7 @@ class AppModel: NSObject {
     var voices = ["en-AU", "en-US", "en-IE","en-ZA","en-GB"]
     var currentVoice = "en-AU"
     
+    
     //current question
     //if correctlyAnswered is 5, categoryComplete becomes 1, use this as a boolean value to 
     //go back to the main screen
@@ -39,10 +40,6 @@ class AppModel: NSObject {
     let filemgr = NSFileManager.defaultManager()
     let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)!
     var databasePath : String!
-    
-    //sound vars
-    var audioPlayer = AVAudioPlayer()
-    //let soundURL = NSBundle.mainBundle().URLForResource("click", withExtension: "aif")
     
 
     
@@ -194,8 +191,8 @@ class AppModel: NSObject {
             let querySQL = "SELECT SCORE, QUESTIONSANSWERED FROM GAME"
             let results: FMResultSet? = gameDB.executeQuery(querySQL, withArgumentsInArray: nil)
    
-            playerScore = results!.intForColumn("score")
-            overallQuestionsAnswered = results!.intForColumn("questionsanswered")
+            self.playerScore = results!.intForColumn("score")
+            self.overallQuestionsAnswered = results!.intForColumn("questionsanswered")
             println("retrieved saved player stats.")
             println("Player score: \(playerScore), Overall questions answered: \(overallQuestionsAnswered)")
 
@@ -206,13 +203,6 @@ class AppModel: NSObject {
            println("Error: \(gameDB.lastErrorMessage())")
         }
     
-    }
-    
-    
-    func unwindToMainMenu(sender: UIStoryboardSegue) {
-        
-        let sourceViewController = sender.sourceViewController
-        
     }
     
 
