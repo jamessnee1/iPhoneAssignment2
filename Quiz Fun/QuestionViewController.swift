@@ -26,6 +26,27 @@ class QuestionViewController: UIViewController {
     let wrongURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("wrong", ofType: "mp3")!)
     let rightURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("right", ofType: "mp3")!)
     
+    //alert for game over
+    func showGameOverAlert(){
+        
+        var alert = UIAlertController(title: "Alert", message: "You got the question wrong! Game Over!", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        //create OK button action
+        let okAction : UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { action -> Void in
+            //reset questions counters
+            appModel.currentQuestion = 0
+            appModel.correctlyAnswered = 0
+            appModel.playerScore = 0
+            appModel.overallQuestionsAnswered = 0
+            //do the dismiss in here
+            self.performSegueWithIdentifier("gameOver", sender: self)
+        
+        }
+        alert.addAction(okAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
     //button actions
     @IBAction func answer1Button(sender: UIButton) {
         println("Answer 1 selected")
@@ -37,6 +58,7 @@ class QuestionViewController: UIViewController {
         else {
             audioPlayer.play()
             shakeText(answer1Text)
+            showGameOverAlert()
         }
         
     }
@@ -50,6 +72,7 @@ class QuestionViewController: UIViewController {
         else {
             audioPlayer.play()
             shakeText(answer2Text)
+            showGameOverAlert()
         }
         
     }
@@ -63,6 +86,7 @@ class QuestionViewController: UIViewController {
         else {
             audioPlayer.play()
             shakeText(answer3Text)
+            showGameOverAlert()
         }
 
     }
@@ -76,6 +100,7 @@ class QuestionViewController: UIViewController {
         else {
             audioPlayer.play()
             shakeText(answer4Text)
+            showGameOverAlert()
         }
 
     }
