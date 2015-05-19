@@ -81,9 +81,7 @@ class SuccessViewController: UIViewController {
     //next button function
     @IBAction func nextButton(sender: UIButton) {
         
-        if let navigationController = self.navigationController {
-            navigationController.popViewControllerAnimated(true)
-        }
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as! [UIViewController]
         
         if(appModel.categoryComplete == 1){
             //set currentQuestion to 0
@@ -93,8 +91,18 @@ class SuccessViewController: UIViewController {
         
         //only perform segue if game is finished
         if nextQuestionButton.titleLabel == "Finish Game" {
-            self.presentingViewController?.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            //self.presentingViewController?.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            println("Game finished")
+            println("viewcontrollers count is \(viewControllers.count)")
+            self.navigationController?.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
             
+        }else {
+            
+            println("viewcontrollers count is \(viewControllers.count)")
+            if let navigationController = self.navigationController {
+                navigationController.popViewControllerAnimated(true)
+            }
+        
         }
 
         

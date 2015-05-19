@@ -19,6 +19,9 @@
 		590E28631B0AF35400859DDE /* background.tif in Resources */ = {isa = PBXBuildFile; fileRef = 590E28621B0AF35400859DDE /* background.tif */; };
 		590E28661B0AF52300859DDE /* buttonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E28641B0AF52300859DDE /* buttonNormal.png */; };
 		590E28671B0AF52300859DDE /* buttonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E28651B0AF52300859DDE /* buttonPressed.png */; };
+		590E28691B0AF75100859DDE /* optionsLogo.tif in Resources */ = {isa = PBXBuildFile; fileRef = 590E28681B0AF75100859DDE /* optionsLogo.tif */; };
+		590E286C1B0AFA9B00859DDE /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E286A1B0AFA9B00859DDE /* fb.png */; };
+		590E286D1B0AFA9B00859DDE /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E286B1B0AFA9B00859DDE /* twitter.png */; };
 		59132BF01B024A67000EF7E3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59132BEF1B024A67000EF7E3 /* Social.framework */; };
 		59661FCF1B09C9E9009A5810 /* quizlogo.tif in Resources */ = {isa = PBXBuildFile; fileRef = 59661FCE1B09C9E9009A5810 /* quizlogo.tif */; };
 		5966B8971B00978500772FE9 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966B8961B00978500772FE9 /* OptionsViewController.swift */; };
@@ -60,6 +63,9 @@
 		590E28621B0AF35400859DDE /* background.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = background.tif; path = Assets/background.tif; sourceTree = "<group>"; };
 		590E28641B0AF52300859DDE /* buttonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonNormal.png; path = Assets/buttonNormal.png; sourceTree = "<group>"; };
 		590E28651B0AF52300859DDE /* buttonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonPressed.png; path = Assets/buttonPressed.png; sourceTree = "<group>"; };
+		590E28681B0AF75100859DDE /* optionsLogo.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = optionsLogo.tif; path = Assets/optionsLogo.tif; sourceTree = "<group>"; };
+		590E286A1B0AFA9B00859DDE /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb.png; path = Assets/fb.png; sourceTree = "<group>"; };
+		590E286B1B0AFA9B00859DDE /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = Assets/twitter.png; sourceTree = "<group>"; };
 		59132BEF1B024A67000EF7E3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		59661FCE1B09C9E9009A5810 /* quizlogo.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = quizlogo.tif; path = Assets/quizlogo.tif; sourceTree = "<group>"; };
 		5966B8961B00978500772FE9 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
@@ -186,8 +192,11 @@
 		59661FCD1B09C9CC009A5810 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				590E286A1B0AFA9B00859DDE /* fb.png */,
+				590E286B1B0AFA9B00859DDE /* twitter.png */,
 				590E28641B0AF52300859DDE /* buttonNormal.png */,
 				590E28651B0AF52300859DDE /* buttonPressed.png */,
+				590E28681B0AF75100859DDE /* optionsLogo.tif */,
 				590E28621B0AF35400859DDE /* background.tif */,
 				59661FCE1B09C9E9009A5810 /* quizlogo.tif */,
 			);
@@ -298,6 +307,9 @@
 				4E27E7AE1B0069DF00E093B2 /* LaunchScreen.xib in Resources */,
 				590E28671B0AF52300859DDE /* buttonPressed.png in Resources */,
 				4E27E7AB1B0069DF00E093B2 /* Images.xcassets in Resources */,
+				590E286C1B0AFA9B00859DDE /* fb.png in Resources */,
+				590E28691B0AF75100859DDE /* optionsLogo.tif in Resources */,
+				590E286D1B0AFA9B00859DDE /* twitter.png in Resources */,
 				590E28661B0AF52300859DDE /* buttonNormal.png in Resources */,
 				59661FCF1B09C9E9009A5810 /* quizlogo.tif in Resources */,
 			);
