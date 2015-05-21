@@ -16,6 +16,17 @@
 		4E27E7C81B006B7100E093B2 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27E7C71B006B7100E093B2 /* CategoriesTableViewController.swift */; };
 		4E27E7CA1B006C1D00E093B2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27E7C91B006C1D00E093B2 /* Category.swift */; };
 		4E27E7CC1B00709400E093B2 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27E7CB1B00709400E093B2 /* QuestionViewController.swift */; };
+		5901E6FD1B0DCD900091B07E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E6FC1B0DCD900091B07E /* GoogleMobileAds.framework */; };
+		5901E6FF1B0DCDBF0091B07E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E6FE1B0DCDBF0091B07E /* AdSupport.framework */; };
+		5901E7011B0DCDC70091B07E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E7001B0DCDC70091B07E /* AudioToolbox.framework */; };
+		5901E7031B0DCDD30091B07E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E7021B0DCDD30091B07E /* AVFoundation.framework */; };
+		5901E7051B0DCDDB0091B07E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E7041B0DCDDB0091B07E /* CoreGraphics.framework */; };
+		5901E7071B0DCDE20091B07E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E7061B0DCDE20091B07E /* CoreTelephony.framework */; };
+		5901E70A1B0DCDFC0091B07E /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E7081B0DCDFC0091B07E /* EventKit.framework */; };
+		5901E70B1B0DCDFC0091B07E /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E7091B0DCDFC0091B07E /* EventKitUI.framework */; };
+		5901E70D1B0DCE050091B07E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E70C1B0DCE040091B07E /* MessageUI.framework */; };
+		5901E70F1B0DCE0A0091B07E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E70E1B0DCE0A0091B07E /* StoreKit.framework */; };
+		5901E7111B0DCE120091B07E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901E7101B0DCE120091B07E /* SystemConfiguration.framework */; };
 		590E28631B0AF35400859DDE /* background.tif in Resources */ = {isa = PBXBuildFile; fileRef = 590E28621B0AF35400859DDE /* background.tif */; };
 		590E28661B0AF52300859DDE /* buttonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E28641B0AF52300859DDE /* buttonNormal.png */; };
 		590E28671B0AF52300859DDE /* buttonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 590E28651B0AF52300859DDE /* buttonPressed.png */; };
@@ -66,6 +77,17 @@
 		4E27E7C71B006B7100E093B2 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		4E27E7C91B006C1D00E093B2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4E27E7CB1B00709400E093B2 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		5901E6FC1B0DCD900091B07E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		5901E6FE1B0DCDBF0091B07E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		5901E7001B0DCDC70091B07E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5901E7021B0DCDD30091B07E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5901E7041B0DCDDB0091B07E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5901E7061B0DCDE20091B07E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		5901E7081B0DCDFC0091B07E /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		5901E7091B0DCDFC0091B07E /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		5901E70C1B0DCE040091B07E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5901E70E1B0DCE0A0091B07E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5901E7101B0DCE120091B07E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		590E28611B0AF06A00859DDE /* buttonClick.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttonClick.aif; sourceTree = "<group>"; };
 		590E28621B0AF35400859DDE /* background.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = background.tif; path = Assets/background.tif; sourceTree = "<group>"; };
 		590E28641B0AF52300859DDE /* buttonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonNormal.png; path = Assets/buttonNormal.png; sourceTree = "<group>"; };
@@ -105,6 +127,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5901E7111B0DCE120091B07E /* SystemConfiguration.framework in Frameworks */,
+				5901E70F1B0DCE0A0091B07E /* StoreKit.framework in Frameworks */,
+				5901E70D1B0DCE050091B07E /* MessageUI.framework in Frameworks */,
+				5901E70A1B0DCDFC0091B07E /* EventKit.framework in Frameworks */,
+				5901E70B1B0DCDFC0091B07E /* EventKitUI.framework in Frameworks */,
+				5901E7071B0DCDE20091B07E /* CoreTelephony.framework in Frameworks */,
+				5901E7051B0DCDDB0091B07E /* CoreGraphics.framework in Frameworks */,
+				5901E7031B0DCDD30091B07E /* AVFoundation.framework in Frameworks */,
+				5901E7011B0DCDC70091B07E /* AudioToolbox.framework in Frameworks */,
+				5901E6FF1B0DCDBF0091B07E /* AdSupport.framework in Frameworks */,
+				5901E6FD1B0DCD900091B07E /* GoogleMobileAds.framework in Frameworks */,
 				59132BF01B024A67000EF7E3 /* Social.framework in Frameworks */,
 				5981AA941B00829F006D33F7 /* libsqlite3.dylib in Frameworks */,
 			);
@@ -123,6 +156,17 @@
 		4E27E7951B0069DE00E093B2 = {
 			isa = PBXGroup;
 			children = (
+				5901E7101B0DCE120091B07E /* SystemConfiguration.framework */,
+				5901E70E1B0DCE0A0091B07E /* StoreKit.framework */,
+				5901E70C1B0DCE040091B07E /* MessageUI.framework */,
+				5901E7081B0DCDFC0091B07E /* EventKit.framework */,
+				5901E7091B0DCDFC0091B07E /* EventKitUI.framework */,
+				5901E7061B0DCDE20091B07E /* CoreTelephony.framework */,
+				5901E7041B0DCDDB0091B07E /* CoreGraphics.framework */,
+				5901E7021B0DCDD30091B07E /* AVFoundation.framework */,
+				5901E7001B0DCDC70091B07E /* AudioToolbox.framework */,
+				5901E6FE1B0DCDBF0091B07E /* AdSupport.framework */,
+				5901E6FC1B0DCD900091B07E /* GoogleMobileAds.framework */,
 				59132BEF1B024A67000EF7E3 /* Social.framework */,
 				5981AA931B00829F006D33F7 /* libsqlite3.dylib */,
 				4E27E7A01B0069DF00E093B2 /* Quiz Fun */,
@@ -495,6 +539,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Quiz Fun/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,6 +556,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Quiz Fun/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

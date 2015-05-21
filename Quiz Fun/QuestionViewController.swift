@@ -8,9 +8,11 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class QuestionViewController: UIViewController {
     
+    @IBOutlet weak var adBannerView: GADBannerView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionTextField: UITextView!
     @IBOutlet var answer1Text: UIButton!
@@ -160,6 +162,13 @@ class QuestionViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        
+        //load ad
+        //adUnitID is just the default Google ID, as it is not a live app
+        self.adBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        self.adBannerView.rootViewController = self
+        var request : GADRequest = GADRequest()
+        self.adBannerView.loadRequest(request)
         
         scoreLabel.text = "Player Score: \(appModel.playerScore)"
         var title = self.title

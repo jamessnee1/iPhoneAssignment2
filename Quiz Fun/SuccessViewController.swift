@@ -9,6 +9,7 @@
 import UIKit
 import Social
 import AVFoundation
+import GoogleMobileAds
 
 class SuccessViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class SuccessViewController: UIViewController {
     
     @IBOutlet weak var finishButton: UIButton!
     
+    @IBOutlet weak var adBannerView: GADBannerView!
     
     
     let synth = AVSpeechSynthesizer()
@@ -118,6 +120,13 @@ class SuccessViewController: UIViewController {
         
         //hide back button to not mess with game
         self.navigationItem.hidesBackButton = true
+        
+        //load ad
+        //adUnitID is just the default Google ID, as it is not a live app
+        self.adBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        self.adBannerView.rootViewController = self
+        var request : GADRequest = GADRequest()
+        self.adBannerView.loadRequest(request)
 
         
         //increase the current question by 1, so when the next VC is loaded question will be updated

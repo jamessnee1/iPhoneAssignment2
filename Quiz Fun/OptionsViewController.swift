@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class OptionsViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet var voiceSwitch: UISwitch!
     @IBOutlet var voiceSlider: UISlider!
+    @IBOutlet weak var musicSwitch: UISwitch!
+    @IBOutlet weak var adBannerView: GADBannerView!
 
     @IBAction func mySwitch(sender: UISwitch) {
         
@@ -25,6 +28,24 @@ class OptionsViewController: UIViewController, UIPickerViewDelegate {
             println("voiceOn = 0")
         }
     }
+    
+    @IBAction func musicSwitch(sender: UISwitch) {
+        //check if music switch on or off
+        //and stop bg music accordingly
+        if musicSwitch.on{
+            appModel.musicOn = 1
+            if(appModel.music.playing==false){
+                appModel.music.play()
+            }
+        }
+        else{
+            appModel.musicOn = 0
+            if(appModel.music.playing){
+                appModel.music.stop()
+            }
+        }
+    }
+
 
     @IBAction func voiceSliderValueChanged(sender: UISlider) {
         //value for rate
@@ -33,6 +54,13 @@ class OptionsViewController: UIViewController, UIPickerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //load ad
+        //adUnitID is just the default Google ID, as it is not a live app
+        self.adBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        self.adBannerView.rootViewController = self
+        var request : GADRequest = GADRequest()
+        self.adBannerView.loadRequest(request)
         
         //set first value in picker to first item of the voices array
         appModel.currentVoice = appModel.voices[0]
@@ -43,6 +71,11 @@ class OptionsViewController: UIViewController, UIPickerViewDelegate {
             voiceSwitch.setOn(true, animated: true)
         }else {
             voiceSwitch.setOn(false, animated: false)
+        }
+        if appModel.musicOn == 1 {
+            musicSwitch.setOn(true, animated: true)
+        }else {
+            musicSwitch.setOn(false, animated: false)
         }
         
         //get textToSpeechRate

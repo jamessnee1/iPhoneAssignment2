@@ -8,8 +8,12 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class MainViewController: UIViewController {
+    
+    @IBOutlet weak var adBannerView: GADBannerView!
+    
     
     var music = AVAudioPlayer()
     let musicURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!)
@@ -54,19 +58,26 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //load ad
+        //adUnitID is just the default Google ID, as it is not a live app
+        self.adBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        self.adBannerView.rootViewController = self
+        var request : GADRequest = GADRequest()
+        self.adBannerView.loadRequest(request)
+        
         var error: NSError?
 
         // Do any additional setup after loading the view.
         //setup music
-        music = AVAudioPlayer(contentsOfURL: musicURL, error: nil)
-        music.numberOfLoops = -1
-        music.prepareToPlay()
-        music.play()
-
-       
-
+        appModel.music = AVAudioPlayer(contentsOfURL: musicURL, error: nil)
+        appModel.music.numberOfLoops = -1
+        appModel.music.prepareToPlay()
+        if(appModel.musicOn==1){
+            appModel.music.play()
+        }
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

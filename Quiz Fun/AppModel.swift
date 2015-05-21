@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 //singleton class accessable from anywhere in the app. Contains all the question data
 class AppModel: NSObject {
@@ -15,11 +16,15 @@ class AppModel: NSObject {
     //stores how many questions the player has answered correctly
     var playerScore : Int32 = 0
     
+    var music = AVAudioPlayer() 
+    
     //voice variables
     var voiceOn = 1
     //default
     var voiceRate = 0.3
     
+    //bg music default on
+    var musicOn = 1
     
     //array of different voices
     var voice_string = ["Australian", "American", "Irish", "South African", "English"]
