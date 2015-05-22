@@ -12,6 +12,7 @@ import GoogleMobileAds
 
 class QuestionViewController: UIViewController {
     
+
     @IBOutlet weak var adBannerView: GADBannerView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionTextField: UITextView!
@@ -156,6 +157,13 @@ class QuestionViewController: UIViewController {
         //hide back button to not mess with game
         self.navigationItem.hidesBackButton = true
         
+        //options button
+        var optionsButton = UIBarButtonItem(title: "Options", style: UIBarButtonItemStyle.Plain, target: self, action: "doOptionsMenu")
+        
+        self.navigationItem.rightBarButtonItem = optionsButton
+        
+        
+        
         
 
     }
@@ -205,6 +213,18 @@ class QuestionViewController: UIViewController {
         
         
         
+    }
+    
+    func doOptionsMenu(){
+        
+        //access options menu programmatically
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let options: OptionsViewController = storyboard.instantiateViewControllerWithIdentifier("options") as! OptionsViewController
+        
+        self.presentViewController(options, animated: true, completion: nil)
+
+    
     }
 
     override func didReceiveMemoryWarning() {

@@ -122,7 +122,7 @@ class AppModel: NSObject {
         let docsDir = dirPaths[0] as! String
         databasePath = docsDir.stringByAppendingPathComponent("gameData.db")
         
-        println("directory is \(docsDir)")
+        //println("directory is \(docsDir)")
         
         //check for file
         if !filemgr.fileExistsAtPath(databasePath as String){
@@ -139,7 +139,7 @@ class AppModel: NSObject {
                 
                 println("Connected to SQLite Game Database")
                 println("Executing statement")
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS GAME (score INTEGER, questionsanswered INTEGER)"
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS GAME (score INTEGER, questionsanswered INTEGER);"
                 println(sql_stmt)
                 if !gameDB.executeStatements(sql_stmt){
                     println("Error: \(gameDB.lastErrorMessage())")
@@ -165,7 +165,7 @@ class AppModel: NSObject {
         if gameDB.open() {
             
             //let insertSQL = "INSERT INTO GAME (score, questionsanswered) VALUES ('\(playerScore), '\(overallQuestionsAnswered)')"
-            let insertSQL = "INSERT INTO GAME (score, questionsanswered) VALUES ('playerScore', 'overallQuestionsAnswered')"
+            let insertSQL = "INSERT INTO GAME (score, questionsanswered) VALUES ('playerScore', 'overallQuestionsAnswered');"
             println("Save data query: \(insertSQL)")
             
             let result = gameDB.executeUpdate(insertSQL, withArgumentsInArray: nil)
@@ -194,11 +194,17 @@ class AppModel: NSObject {
         //open database
         if gameDB.open(){
             
-            let querySQL = "SELECT score, questionsanswered FROM GAME"
+            let querySQL = "SELECT score, questionsanswered FROM GAME;"
             let results: FMResultSet? = gameDB.executeQuery(querySQL, withArgumentsInArray: nil)
+            
+            while (results!.next()){
+                
+                self.playerScore = results!.intForColumn("score")
+                self.overallQuestionsAnswered = results!.intForColumn("questionsanswered")
+                
+            
+            }
    
-            self.playerScore = results!.intForColumn("score")
-            self.overallQuestionsAnswered = results!.intForColumn("questionsanswered")
             println("retrieved saved player stats.")
             println("Player score: \(playerScore), Overall questions answered: \(overallQuestionsAnswered)")
 

@@ -68,7 +68,7 @@
                                     <action selector="textToSpeech:" destination="a0T-bx-gNn" eventType="touchUpInside" id="lKg-aX-C7Z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOa-uy-ScW">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOa-uy-ScW">
                                 <rect key="frame" x="138" y="409" width="325" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="c8b-Km-V0p"/>
@@ -78,14 +78,14 @@
                                     <action selector="answer3Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="xgJ-Pd-FFD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW2-pf-BgI">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW2-pf-BgI">
                                 <rect key="frame" x="138" y="476" width="325" height="30"/>
                                 <state key="normal" title="Answer 4"/>
                                 <connections>
                                     <action selector="answer4Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="PKW-cW-IeE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-9B-T4u">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-9B-T4u">
                                 <rect key="frame" x="138" y="349" width="325" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="pUw-Iu-IsH"/>
@@ -95,7 +95,7 @@
                                     <action selector="answer2Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="XmK-Qh-GxO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGS-ED-s9U">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGS-ED-s9U">
                                 <rect key="frame" x="138" y="286" width="325" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="TTG-yH-xQp"/>
@@ -106,7 +106,7 @@
                                     <action selector="answer1Button:" destination="a0T-bx-gNn" eventType="touchUpInside" id="aa6-uB-oUS"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-kD-wc8" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-kD-wc8" customClass="GADBannerView">
                                 <rect key="frame" x="140" y="550" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -114,7 +114,7 @@
                                     <constraint firstAttribute="width" constant="320" id="r8d-Fu-vHZ"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1H-qT-dP3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1H-qT-dP3">
                                 <rect key="frame" x="196" y="150" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -149,6 +149,8 @@
                             <constraint firstItem="gSW-2u-9SH" firstAttribute="top" secondItem="U1H-qT-dP3" secondAttribute="bottom" constant="322" id="t61-an-asL"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="adBannerView" destination="gzs-kD-wc8" id="uZ8-KB-SRU"/>
                         <outlet property="answer1Text" destination="QGS-ED-s9U" id="XAh-KJ-d8D"/>
@@ -257,7 +259,7 @@
                                     <segue destination="hPn-I4-Q9m" kind="unwind" identifier="gameFinished" unwindAction="returnToMainMenu:" id="Poz-xY-2d5"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYO-V9-gGl" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYO-V9-gGl" customClass="GADBannerView">
                                 <rect key="frame" x="140" y="550" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -391,7 +393,7 @@ http://creativecommons.org/licenses/by/3.0/</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current score is: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50J-D1-icP">
                                 <rect key="frame" x="217" y="224" width="167" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -426,7 +428,7 @@ http://creativecommons.org/licenses/by/3.0/</string>
         <!--Options View Controller-->
         <scene sceneID="qAr-ME-c9h">
             <objects>
-                <viewController id="mMu-xI-Tjz" customClass="OptionsViewController" customModule="Quiz_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="options" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mMu-xI-Tjz" customClass="OptionsViewController" customModule="Quiz_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ueh-Pi-7DJ"/>
                         <viewControllerLayoutGuide type="bottom" id="UOO-mW-JDy"/>
