@@ -443,7 +443,7 @@ http://creativecommons.org/licenses/by/3.0/</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.29999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YfZ-5k-AAe">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="YfZ-5k-AAe">
                                 <rect key="frame" x="352" y="221" width="107" height="31"/>
                                 <connections>
                                     <action selector="voiceSliderValueChanged:" destination="mMu-xI-Tjz" eventType="valueChanged" id="zEw-v4-TS8"/>

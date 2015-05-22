@@ -27,8 +27,8 @@ class AppModel: NSObject {
     var musicOn = 1
     
     //array of different voices
-    var voice_string = ["Australian", "American", "Irish", "South African", "English"]
-    var voices = ["en-AU", "en-US", "en-IE","en-ZA","en-GB"]
+    var voice_string = ["Arabic", "Australian", "American", "Chinese", "Czech", "Danish", "Dutch", "English (UK)", "German", "Hindi", "Irish", "South African"]
+    var voices = ["ar-SA", "en-AU", "en-US", "zh-CN", "cs-CZ", "da-DK", "nl-BE", "en-GB", "de-DE", "hi-IN", "en-IE","en-ZA"]
     var currentVoice = "en-AU"
     
     
