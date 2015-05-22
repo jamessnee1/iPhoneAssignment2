@@ -10,8 +10,10 @@ import UIKit
 import AVFoundation
 import GoogleMobileAds
 
+
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var adBannerView: GADBannerView!
     
     
@@ -51,12 +53,15 @@ class MainViewController: UIViewController {
         appModel.currentQuestion = 0
         appModel.playerScore = 0
         
+        scoreLabel.text = "Your current score is: \(appModel.playerScore)"
+        
         var alert = UIAlertView(title: "Quiz", message: "Successfully reset quiz!", delegate: self, cancelButtonTitle: "OK")
         alert.show()
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
         //load ad
         //adUnitID is just the default Google ID, as it is not a live app
@@ -76,6 +81,11 @@ class MainViewController: UIViewController {
             appModel.music.play()
         }
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        //set label for score
+        scoreLabel.text = "Your current score is: \(appModel.playerScore)"
     }
     
 

@@ -194,6 +194,7 @@ class QuestionViewController: UIViewController {
         }
         
         //set first question to text field
+        questionTextField.textAlignment = NSTextAlignment.Center
         questionTextField.text = questionArray[appModel.currentQuestion].question
         //set answers
         answer1Text.setTitle(questionArray[appModel.currentQuestion].answer1, forState: UIControlState.Normal)

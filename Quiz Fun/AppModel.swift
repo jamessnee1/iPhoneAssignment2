@@ -44,7 +44,7 @@ class AppModel: NSObject {
         
     //database variables
     let filemgr = NSFileManager.defaultManager()
-    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)!
+    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
     var databasePath : String!
     
 
@@ -139,7 +139,7 @@ class AppModel: NSObject {
                 
                 println("Connected to SQLite Game Database")
                 println("Executing statement")
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS GAME (SCORE INTEGER, QUESTIONSANSWERED INTEGER)"
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS GAME (score INTEGER, questionsanswered INTEGER)"
                 println(sql_stmt)
                 if !gameDB.executeStatements(sql_stmt){
                     println("Error: \(gameDB.lastErrorMessage())")
@@ -165,7 +165,7 @@ class AppModel: NSObject {
         if gameDB.open() {
             
             //let insertSQL = "INSERT INTO GAME (score, questionsanswered) VALUES ('\(playerScore), '\(overallQuestionsAnswered)')"
-            let insertSQL = "INSERT INTO GAME VALUES ('\(playerScore)', '\(overallQuestionsAnswered)')"
+            let insertSQL = "INSERT INTO GAME (score, questionsanswered) VALUES ('playerScore', 'overallQuestionsAnswered')"
             println("Save data query: \(insertSQL)")
             
             let result = gameDB.executeUpdate(insertSQL, withArgumentsInArray: nil)
@@ -194,7 +194,7 @@ class AppModel: NSObject {
         //open database
         if gameDB.open(){
             
-            let querySQL = "SELECT SCORE, QUESTIONSANSWERED FROM GAME"
+            let querySQL = "SELECT score, questionsanswered FROM GAME"
             let results: FMResultSet? = gameDB.executeQuery(querySQL, withArgumentsInArray: nil)
    
             self.playerScore = results!.intForColumn("score")
