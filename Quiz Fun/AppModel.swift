@@ -9,12 +9,17 @@
 import UIKit
 import AVFoundation
 import GoogleMobileAds
+import CoreData
 
 //singleton class accessable from anywhere in the app. Contains all the question data
 class AppModel: NSObject {
     
+    //player variable we can save score and overall questions persistently in with Core Data
+    var player = NSManagedObject()
+    
     //stores how many questions the player has answered correctly
     var playerScore : Int32 = 0
+    //var playerScore = player.valueForKey("score") as? Int32
     
     var music = AVAudioPlayer() 
     
@@ -116,105 +121,62 @@ class AppModel: NSObject {
         Questions(question: "Which composer composed the score to the 'Star Wars' films?", answer1: "Hans Zimmer", answer2: "James Newton Howard", answer3: "Danny Elfman", answer4: "John Williams", correctAnswer: "4"),
         Questions(question: "Which TV show is a spin off of the popular show 'Breaking Bad'?", answer1: "Downton Abbey", answer2: "Arrow", answer3: "Better Call Saul", answer4: "Game of Thrones", correctAnswer: "3")]
     
-    func setupDatabase() {
-        
-        //setup database stuff
-        let docsDir = dirPaths[0] as! String
-        databasePath = docsDir.stringByAppendingPathComponent("gameData.db")
-        
-        //println("directory is \(docsDir)")
-        
-        //check for file
-        if !filemgr.fileExistsAtPath(databasePath as String){
-            
-            //create new database if none
-            let gameDB = FMDatabase(path: databasePath as String)
-            
-            if gameDB == nil {
-                println("Error: \(gameDB.lastErrorMessage())")
-            }
-            
-            //open database
-            if gameDB.open() {
-                
-                println("Connected to SQLite Game Database")
-                println("Executing statement")
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS GAME (score INTEGER, questionsanswered INTEGER);"
-                println(sql_stmt)
-                if !gameDB.executeStatements(sql_stmt){
-                    println("Error: \(gameDB.lastErrorMessage())")
-                }
-                gameDB.close()
-                
-            }else {
-                println("Error: \(gameDB.lastErrorMessage())")
-            }
-            
-            
-        }else {
-            println("Database file already exists")
-        }
     
-    }
     
-    func saveData(){
+    //function to save data to Core Data object
+    func savePlayerData(score: Int32, overallQuestions: Int32){
+    
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
         
-        let gameDB = FMDatabase(path: databasePath as String)
+        let entity = NSEntityDescription.entityForName("Player", inManagedObjectContext: managedContext)
         
-        //open database
-        if gameDB.open() {
-            
-            //let insertSQL = "INSERT INTO GAME (score, questionsanswered) VALUES ('\(playerScore), '\(overallQuestionsAnswered)')"
-            let insertSQL = "INSERT INTO GAME (score, questionsanswered) VALUES ('playerScore', 'overallQuestionsAnswered');"
-            println("Save data query: \(insertSQL)")
-            
-            let result = gameDB.executeUpdate(insertSQL, withArgumentsInArray: nil)
-            
-            if !result {
-                println("Error: \(gameDB.lastErrorMessage())")
-            
-            }
-            else {
-                println("Player stats saved to database!")
-            
-            }
+        let player = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
+        player.setValue(Int(score), forKey: "score")
+        player.setValue(Int(overallQuestions), forKey: "overallquestionsanswered")
+        
+        var error : NSError?
+        if !managedContext.save(&error){
+            println("Could not save \(error), \(error?.userInfo)")
         }
         else {
-            println("Error: \(gameDB.lastErrorMessage())")
+            println("Saved score \(score) and overallQuestions \(overallQuestions) to Core Data")
         }
         
-    
     }
     
-    func retrievePlayer(){
-        
-        let gameDB = FMDatabase(path: databasePath as String)
-        
-        //open database
-        if gameDB.open(){
-            
-            let querySQL = "SELECT score, questionsanswered FROM GAME;"
-            let results: FMResultSet? = gameDB.executeQuery(querySQL, withArgumentsInArray: nil)
-            
-            while (results!.next()){
-                
-                self.playerScore = results!.intForColumn("score")
-                self.overallQuestionsAnswered = results!.intForColumn("questionsanswered")
-                
-            
-            }
-   
-            println("retrieved saved player stats.")
-            println("Player score: \(playerScore), Overall questions answered: \(overallQuestionsAnswered)")
-
-            gameDB.close()
-            
-        
-        }else {
-           println("Error: \(gameDB.lastErrorMessage())")
-        }
+    //function to retrieve data from Core Data object
+    func retrievePlayerData(){
     
+        //Get saved data from persistent store using Core Data
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        let fetchRequest = NSFetchRequest(entityName: "Player")
+        var fetchError : NSError?
+        
+        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &fetchError) as? [NSManagedObject]
+        
+        
+        if let results = fetchedResults {
+            //retrieve player score and overall questions answered and put them back
+            var newPlayer = NSEntityDescription.insertNewObjectForEntityForName("Player", inManagedObjectContext: managedContext) as! NSManagedObject
+            
+            //check results
+            
+            var retrievedScore = results[0].valueForKey("score") as? Int32
+            var retrievedOverallQuestions = results[0].valueForKey("overallquestionsanswered") as? Int32
+            
+            
+            println("Retrieved score is \(retrievedScore)")
+            println("Retrieved overall questions answered is \(retrievedOverallQuestions)")
+            println("successfully retrieved saved player data!")
+        }
+        else {
+            println("Could not fetch \(fetchError), \(fetchError!.userInfo)")
+        }
+
+        
     }
     
 

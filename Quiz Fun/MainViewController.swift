@@ -36,15 +36,7 @@ class MainViewController: UIViewController {
         
         var error : NSError?
         
-        if appModel.filemgr.fileExistsAtPath(appModel.databasePath as String){
-            appModel.filemgr.removeItemAtPath(appModel.databasePath as String, error: &error)
-            println("removed gameData.db")
-            //create new database file
-            appModel.setupDatabase()
-        
-        }else {
-            println("gamedb does not exist")
-        }
+        appModel.savePlayerData(0, overallQuestions: 0)
         
         //reset values in appModel
         appModel.overallQuestionsAnswered = 0
@@ -61,7 +53,7 @@ class MainViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         
         //load ad
         //adUnitID is just the default Google ID, as it is not a live app

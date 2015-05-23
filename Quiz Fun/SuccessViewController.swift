@@ -101,7 +101,6 @@ class SuccessViewController: UIViewController {
         if nextQuestionButton.titleLabel!.text == "Finish Game" {
             game_finished = 1;
             println("Game finished")
-            //self.performSegueWithIdentifier("gameFinished", sender: self)
             
             
         }else {
@@ -148,8 +147,9 @@ class SuccessViewController: UIViewController {
         
         successText.text = text
         
-        //save data to database
-        appModel.saveData()
+        //save data to Core Data
+        appModel.savePlayerData(appModel.playerScore, overallQuestions: appModel.overallQuestionsAnswered)
+        
         
         //check for game completion
         if (appModel.currentQuestion == 5){

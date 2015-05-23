@@ -36,6 +36,8 @@
 		59132BF01B024A67000EF7E3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59132BEF1B024A67000EF7E3 /* Social.framework */; };
 		59661FCF1B09C9E9009A5810 /* quizlogo.tif in Resources */ = {isa = PBXBuildFile; fileRef = 59661FCE1B09C9E9009A5810 /* quizlogo.tif */; };
 		5966B8971B00978500772FE9 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966B8961B00978500772FE9 /* OptionsViewController.swift */; };
+		597CA0FC1B10852D00CEB328 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597CA0FB1B10852D00CEB328 /* CoreData.framework */; };
+		597CA0FF1B1085CF00CEB328 /* appData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 597CA0FD1B1085CF00CEB328 /* appData.xcdatamodeld */; };
 		5981AA921B007BA3006D33F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981AA911B007BA3006D33F7 /* MainViewController.swift */; };
 		5981AA941B00829F006D33F7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5981AA931B00829F006D33F7 /* libsqlite3.dylib */; };
 		59C38AAF1B0B5F2B00AA69CB /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59C38AAE1B0B5F2B00AA69CB /* wrong.mp3 */; };
@@ -98,6 +100,8 @@
 		59132BEF1B024A67000EF7E3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		59661FCE1B09C9E9009A5810 /* quizlogo.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = quizlogo.tif; path = Assets/quizlogo.tif; sourceTree = "<group>"; };
 		5966B8961B00978500772FE9 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		597CA0FB1B10852D00CEB328 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		597CA0FE1B1085CF00CEB328 /* appData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = appData.xcdatamodel; sourceTree = "<group>"; };
 		5981AA911B007BA3006D33F7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5981AA931B00829F006D33F7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		59C38AAE1B0B5F2B00AA69CB /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				597CA0FC1B10852D00CEB328 /* CoreData.framework in Frameworks */,
 				5901E7111B0DCE120091B07E /* SystemConfiguration.framework in Frameworks */,
 				5901E70F1B0DCE0A0091B07E /* StoreKit.framework in Frameworks */,
 				5901E70D1B0DCE050091B07E /* MessageUI.framework in Frameworks */,
@@ -156,6 +161,7 @@
 		4E27E7951B0069DE00E093B2 = {
 			isa = PBXGroup;
 			children = (
+				597CA0FB1B10852D00CEB328 /* CoreData.framework */,
 				5901E7101B0DCE120091B07E /* SystemConfiguration.framework */,
 				5901E70E1B0DCE0A0091B07E /* StoreKit.framework */,
 				5901E70C1B0DCE040091B07E /* MessageUI.framework */,
@@ -234,6 +240,7 @@
 				4E27E7A31B0069DF00E093B2 /* AppDelegate.swift */,
 				4E27E7C51B006A0900E093B2 /* AppModel.swift */,
 				4E27E7C91B006C1D00E093B2 /* Category.swift */,
+				597CA0FD1B1085CF00CEB328 /* appData.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -404,6 +411,7 @@
 				4E27E7C81B006B7100E093B2 /* CategoriesTableViewController.swift in Sources */,
 				4E27E7CC1B00709400E093B2 /* QuestionViewController.swift in Sources */,
 				59F0CE241B00EE8C004BFCF5 /* FMDatabasePool.m in Sources */,
+				597CA0FF1B1085CF00CEB328 /* appData.xcdatamodeld in Sources */,
 				4E27E7C61B006A0900E093B2 /* AppModel.swift in Sources */,
 				59F0CE201B00EE8C004BFCF5 /* FMDatabase.m in Sources */,
 				59F0CE211B00EE8C004BFCF5 /* FMResultSet.m in Sources */,
@@ -632,6 +640,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		597CA0FD1B1085CF00CEB328 /* appData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				597CA0FE1B1085CF00CEB328 /* appData.xcdatamodel */,
+			);
+			currentVersion = 597CA0FE1B1085CF00CEB328 /* appData.xcdatamodel */;
+			path = appData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4E27E7961B0069DE00E093B2 /* Project object */;
 }
