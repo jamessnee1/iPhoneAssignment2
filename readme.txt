@@ -13,7 +13,7 @@ Features: 30 Questions in 6 Categories
 	  type and rate.
 
 
-Known bugs: Core Data will save data correctly, but will not retrieve it correctly.
+Known bugs: None
 
 References:
 http://www.raywenderlich.com/16873/how-to-add-search-into-a-table-view
