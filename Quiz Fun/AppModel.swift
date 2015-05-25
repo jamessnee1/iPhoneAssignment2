@@ -16,6 +16,7 @@ class AppModel: NSObject {
     
     //Core Data Variables
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+
     
     //stores how many questions the player has answered correctly
     var playerScore : Int32 = 0
@@ -126,8 +127,6 @@ class AppModel: NSObject {
     //function to save data to Core Data object
     func savePlayerData(score: Int32, overallQuestions: Int32){
     
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext!
         
         let player = NSEntityDescription.insertNewObjectForEntityForName("Player", inManagedObjectContext: self.managedObjectContext!) as! Player
 
@@ -136,11 +135,11 @@ class AppModel: NSObject {
         player.overallquestionsanswered = NSNumber(int: overallQuestions)
         
         var error : NSError?
-        if !managedContext.save(&error){
+        if !managedObjectContext!.save(&error){
             println("Could not save \(error), \(error?.userInfo)")
         }
         else {
-            println("Saved score \(score) and overallQuestions \(overallQuestions) to Core Data")
+            println("Saved score \(player.score) and overallQuestions \(player.overallquestionsanswered) to Core Data")
             
         }
         
@@ -163,8 +162,10 @@ class AppModel: NSObject {
             //check results
             if results.count > 0 {
                 
-                retrievedScore = results[0].score
-                retrievedOverallQuestions = results[0].overallquestionsanswered
+                //retrieved data is at the end of the array, as every time it's saved 
+                //to Core Data, it's a new instance of Player
+                retrievedScore = results[results.count - 1].score
+                retrievedOverallQuestions = results[results.count - 1].overallquestionsanswered
                 
             }
             
