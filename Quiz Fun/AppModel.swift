@@ -14,8 +14,8 @@ import CoreData
 //singleton class accessable from anywhere in the app. Contains all the question data
 class AppModel: NSObject {
     
-    //player variable we can save score and overall questions persistently in with Core Data
-    var player = NSManagedObject()
+    //Core Data Variables
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     //stores how many questions the player has answered correctly
     var playerScore : Int32 = 0
@@ -129,12 +129,11 @@ class AppModel: NSObject {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext!
         
-        let entity = NSEntityDescription.entityForName("Player", inManagedObjectContext: managedContext)
+        let player = NSEntityDescription.insertNewObjectForEntityForName("Player", inManagedObjectContext: self.managedObjectContext!) as! Player
+
         
-        let player = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        
-        player.setValue(Int(score), forKey: "score")
-        player.setValue(Int(overallQuestions), forKey: "overallquestionsanswered")
+        player.score = NSNumber(int: score)
+        player.overallquestionsanswered = NSNumber(int: overallQuestions)
         
         var error : NSError?
         if !managedContext.save(&error){
@@ -142,6 +141,7 @@ class AppModel: NSObject {
         }
         else {
             println("Saved score \(score) and overallQuestions \(overallQuestions) to Core Data")
+            
         }
         
     }
@@ -150,26 +150,32 @@ class AppModel: NSObject {
     func retrievePlayerData(){
     
         //Get saved data from persistent store using Core Data
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext!
         let fetchRequest = NSFetchRequest(entityName: "Player")
         var fetchError : NSError?
         
-        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &fetchError) as? [NSManagedObject]
+        let fetchedResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: &fetchError) as? [Player]
         
+        var retrievedScore : NSNumber = 0
+        var retrievedOverallQuestions : NSNumber = 0
         
         if let results = fetchedResults {
             //retrieve player score and overall questions answered and put them back
-            var newPlayer = NSEntityDescription.insertNewObjectForEntityForName("Player", inManagedObjectContext: managedContext) as! NSManagedObject
-            
             //check results
-            
-            var retrievedScore = results[0].valueForKey("score") as? Int32
-            var retrievedOverallQuestions = results[0].valueForKey("overallquestionsanswered") as? Int32
+            if results.count > 0 {
+                
+                retrievedScore = results[0].score
+                retrievedOverallQuestions = results[0].overallquestionsanswered
+                
+            }
             
             
             println("Retrieved score is \(retrievedScore)")
             println("Retrieved overall questions answered is \(retrievedOverallQuestions)")
+            
+            //set retrieved data to model
+            playerScore = retrievedScore.intValue
+            overallQuestionsAnswered = retrievedOverallQuestions.intValue
+            
             println("successfully retrieved saved player data!")
         }
         else {

@@ -41,6 +41,10 @@ class QuestionViewController: UIViewController {
             appModel.correctlyAnswered = 0
             appModel.playerScore = 0
             appModel.overallQuestionsAnswered = 0
+            
+            //save updated score to Core Data
+            appModel.savePlayerData(0, overallQuestions: 0)
+            
             //do the dismiss in here
             self.performSegueWithIdentifier("gameOver", sender: self)
         

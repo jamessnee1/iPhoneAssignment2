@@ -54,7 +54,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         //load ad
         //adUnitID is just the default Google ID, as it is not a live app
         self.adBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
